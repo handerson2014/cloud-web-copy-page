@@ -1,0 +1,109 @@
+
+
+/* Globals
+**********************/
+
+.benefit {
+  text-align: center;
+}
+
+.benefit p {
+  @include media(desktop-s) {
+    text-align: left;
+    @include adjust-font-size-to(20px, 1.5);
+  }
+}
+
+.benefit li {
+  @include adjust-font-size-to(16px, 1.5);
+  @include bulletlist;
+}
+
+.benefit h3 {
+  @include media(desktop-s) { 
+    @include adjust-font-size-to(35px);
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+
+/* Discover Portal
+**********************/
+
+.benefit--discover [class^="icon-"] {
+  color: #1F1F3F;
+}
+
+.benefit--discover h2 {
+  color: #1F1F3F;
+}
+
+.benefit--discover p {
+  font-weight: $bold;
+  @include media(desktop-s) {
+    font-weight: $semibold;
+  }
+}
+
+.benefit--discover .container--has-bgimage {
+  background-image: url("../img/discover/bg-benefits-discover-small.jpg");
+  @include media(desktop-s) {
+    background-image: url("../img/discover/bg-benefits-discover.jpg");
+  }
+}
+
+.benefit--discover .benefit-header-forstudents::after {
+  @include borderline($green, center);
+}
+
+.benefit--discover .benefit-header-forteachers::after {
+  @include borderline($aqua, center);
+}
+
+.benefit--discover .benefit-header-forleaders::after {
+  @include borderline($purple, center);
+}
+
+
+/* Signature Products
+**********************/
+
+.benefit--signature {
+  background-color: #F5722C;
+  color: $white;
+}
+
+.benefit--signature header {
+	padding-top: 30px;
+	padding-bottom: 0;
+}
+
+.benefit--signature [class^="icon-"] {
+  @include media(desktop-s) {
+		display: none;		
+	}	
+}
+
+.benefit--signature h2::before {
+  @include media(desktop-s) {
+		@include borderline($white, center);
+	}
+}
+
+.benefit--signature p {
+  text-align: center;
+  @include media(desktop-s) {
+		max-width: 95%;
+  	font-weight: $light;
+		@include adjust-font-size-to (18px,2);
+	}	
+}
+
+.benefit--signature h3 {
+  @include adjust-font-size-to (25px);
+}
+
+.benefit--signature h3::after {
+  @include borderline($white, center);
+}

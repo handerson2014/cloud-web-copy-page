@@ -1,0 +1,29 @@
+.notice {
+  padding: 210px 2% 0;
+  height: 100%;
+  > h1 {
+    @include adjust-font-size-to (200px, 12);
+    color: #545454;
+    font-weight: $extrabold;
+    text-transform: uppercase;
+    padding-top: 25px;
+  }
+    
+  > h4 {
+   color: $orange;
+   font-weight: $bold;
+   @include adjust-font-size-to (26px, 2.5);
+  }
+    
+  @include media(mobile-only) { 
+    padding-top: 40px;
+    > h1 {
+     @include adjust-font-size-to (100px, 8);   
+    }
+  }
+}
+
+.notice--not-found {
+  text-align:center;
+  background: url('../../assets/img/global/bg-404-error.jpg') no-repeat top center;
+}

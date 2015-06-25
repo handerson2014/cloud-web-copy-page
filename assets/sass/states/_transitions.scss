@@ -1,0 +1,309 @@
+
+/* Explore the Portal: Changes and effects trigged when "Explore the Portal" is open.
+**********************/
+
+body.explore-the-portal-is-open {
+  overflow: hidden;
+  position: fixed;
+  @include media(desktop-s) {
+    position: relative;
+  }
+  
+  .header-logo-laureate,
+  .header-login-container,
+  .header-button-help
+  {
+    display: none;
+  }
+  
+  .icon-explore em {
+    opacity: 0;
+  }
+  
+  .nav-explore-the-portal {
+    visibility: visible;
+    background-color: rgba($black, 0.9);
+    overflow: auto;
+    @include opacity(1);
+  }
+
+  .nav-explore-the-portal > nav {
+    @include media(desktop-s) {
+      @include transform(translate(0, 0));
+    }
+  }
+  .nav-explore-the-portal li{
+    visibility: visible;
+    @include opacity(1);
+    @include transform(translate3d(0,0,0));   
+  } 
+
+  .icon-explore::after {
+    @include transform(translateY(-5px) rotate(45deg));
+    background: $orange;
+  }
+  
+  .icon-explore::before {
+    @include transform(translateY(5px) rotate(-45deg));
+    background: $orange;
+  }
+
+  .header-button-explore {
+    background-color: transparent;
+		color: $white;
+    @include media(desktop-s) {
+      @include transform(translateX(-40px));
+    }
+  }
+
+	.header-sticky-button-explore {
+    background-image:none;
+    @include media(desktop-s) {
+      @include transform(translateX(-30px));
+    }
+  }
+
+  .header-sticky.smaller {
+    background-image:none;
+    background-color:transparent;
+    .header-sticky-logo-laureate,
+    .header-sticky-branding,
+    .header-sticky-button-help,
+    .header-sticky-login-container{
+      display: none;
+    } 
+  }
+  .button-explore:hover {
+    background-color: transparent;
+    color: $orange;
+    .icon-explore::before {
+      top: 0;
+      height: 5px;
+      background: $orange;
+    }
+    .icon-explore::after {
+      top: 10px;
+      height: 5px;
+      background: $orange;
+    }
+  }
+}
+
+
+/* Breadcrumb Hover color
+**********************/
+
+.header-breadcrumb a:hover {    
+  color: $orange;
+}
+
+.header-breadcrumb a i{
+  @include transform(translatex(0));
+  @include transition-property(transform, color);
+  @include transition-duration(.5s);
+  @include transition-delay(.2s);
+}
+
+
+.header-breadcrumb a:hover i{
+  @include media(desktop-m) { 
+    color: $orange;
+    @include transform(translatex(-5px));
+  }
+}
+
+
+/* Navigation Filters open effect
+**********************/
+
+.nav-dropdown.nav-dropdown-is-open h3 i::after {
+  background: $white;
+  @include transform(rotate(45deg));
+}
+  
+.nav-dropdown.nav-dropdown-is-open h3 i::before {
+  background: $white;
+  @include transform(rotate(-45deg));
+}
+
+
+/* Modal Window Entrance Effects
+**********************/
+
+.modal {
+  visibility: hidden;
+  @include transition-property(transform, visibility);
+  @include transition-duration(.4s);
+}
+
+.modal--slidedown {
+  visibility: hidden;
+  @include transform(translate(0, -100%));
+  @include transition-property(transform, visibility);
+  @include transition-duration(.4s);
+}
+
+.modal--is-open {
+  visibility: visible;
+  @include transform(translate(0, 0));
+}
+
+
+
+/* Block Effects and Transitions with Hover
+**********************/
+
+.block-video:hover .block-preview {
+  @include media(desktop-m) { 
+    &:before{
+      background: $white;
+      @include opacity(.9);
+    }
+
+    i {
+      color: $mid-gray;
+      margin-top: -20px;
+      @include opacity(1);
+      @include adjust-font-size-to(100px);
+    }
+
+    .button {
+      margin-top: -80px;
+      @include opacity(1);
+    }
+  }
+}
+
+.block-rounded:hover .block-preview {
+  @include media(desktop-m) { 
+    &:before{
+      display:none;
+    }
+    img {
+      @include opacity(.1);
+    }
+  }
+}
+
+.block-folder:hover .block-preview {
+  @include media(desktop-m) { 
+    height: 100%;
+    width: 100%; 
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    &:before {
+      @include pseudo-element-bg ($yellow-resource);
+      @include opacity(.95);
+    }
+    i {
+      width: 100%;
+      text-align: right;
+      margin: 30px 0 0 0;
+      color: $white;
+      padding-right: 20px;
+      @include opacity(1);
+      @include adjust-font-size-to(90px);
+    }
+    span {
+      display: none;
+    } 
+    .button {
+      display: block;
+      margin: 5px 0 0 auto;
+      right: 20px;
+      @include opacity(1);
+    }
+  }
+}
+
+.block-folder-open:hover .block-preview {
+  @include media(desktop-m) { 
+    width: 30%;
+    right: 0;
+    padding: 0;
+    bottom: auto;
+    height: 100%;
+    &:before {
+      display:none;
+    }
+    i {
+      margin: 25px auto;
+      text-align: center;
+      padding: 0;
+    }
+    span {
+      display: block;
+    } 
+    .button {
+      display: none;
+    }
+  }
+}
+
+.block-document:hover .block-preview {
+  @include media(desktop-m) { 
+    &:before {
+      @include opacity(.9);
+    }
+  
+    i {
+      margin-top: -10px;  
+      color: $mid-gray;
+      @include opacity(1);
+      @include adjust-font-size-to(80px);
+    }
+  
+    img {
+      @include opacity(0);
+    }
+  
+    .button {
+      margin-top: -60px;
+      @include opacity(1);
+    }
+  }
+}
+
+.block-link:hover .block-preview {
+  @include media(desktop-m) { 
+    &:before {
+      @include pseudo-element-bg ($white);
+      @include opacity(.9);
+    }
+    &:after {
+      height: 0;
+      width: 0;
+    }
+    i {
+      margin-top: -20px;
+      background-color: transparent;
+      color: $mid-gray;
+      @include adjust-font-size-to(100px);
+    }
+    .button {
+      margin-top: 130px;
+      @include opacity(1);
+    }
+  }
+}
+
+.block-quote:hover .block-preview {
+  @include media(desktop-m) { 
+    &:before {
+      @include opacity(.9);
+    }  
+    i {
+      margin-top: auto;
+      color: $mid-gray;
+      @include opacity(1);
+    }
+    p {
+      display: none;
+    }
+    .button {
+      margin-top: 120px;
+      @include opacity(1);
+    }
+  }
+}

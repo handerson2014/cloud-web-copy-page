@@ -1,0 +1,224 @@
+
+
+/*  Global
+**********************/
+
+.contact-information {
+  margin-top: 40px;
+  clear:both;
+  color: $gray;
+  @include media(desktop-l) {
+    margin-top: 60px;
+  }
+}
+
+.contact-information > span {
+  display:block;
+  margin-top: 5px;
+}
+
+.contact-name {
+  font-weight: $bold;
+  font-family: $ProximaNova;
+  @include adjust-font-size-to (25px, 1.5);
+}
+
+.contact-position {
+  @include adjust-font-size-to (20px, 1.5);
+}
+
+.contact-company {
+  font-weight:$semibold;
+  font-family: $ProximaNova;
+  @include adjust-font-size-to (18px, 1.5);
+}
+
+.contact-email {
+  padding-top:5px;
+  padding-left: 5px;
+  text-decoration: underline;
+  vertical-align: middle;
+  color: $gray;
+}
+
+.contact-information [class^="icon-"] {
+  font-size: 2rem;
+  color: $gray;
+}
+
+.contact-information a:hover {
+  .contact-email, 
+  [class^="icon-"] {
+    color: $orange;
+  }
+}
+
+
+/*  Discover Portal
+**********************/
+
+.contactbox--discover div:nth-child(2) {
+  background-color: $white;
+}
+
+.contactbox--discover h3::after {
+  @include borderline(#F95700, left);
+}
+
+.contactbox--discover .contact-company {
+  color: #999999;
+}
+
+.contactbox--discover .contact-information [class^="icon-"] {
+  color: #999999;
+}
+
+
+/*  Signature Products
+**********************/
+
+.contactbox--signature {
+  background-color: #BCB0A2;
+  color: $white;
+  @include media(desktop-s) { 
+    @include filter-gradient(#BCB0A2, #B2A89D, horizontal); 
+    @include background-image(linear-gradient(left bottom, #BCB0A2 50%,#B2A89D 50%,#B2A89D 50%));
+  }
+  input, textarea {
+    color: $mid-gray;
+  }
+}
+
+.contactbox--signature h3::after {
+  @include borderline(#978F85, left);
+}
+
+.contactbox--signature .contact-information {
+  color: $white;
+}
+
+.contactbox--signature .contact-email {
+  color: $white;
+}
+
+.contactbox--signature .contact-information [class^="icon-"] {
+  color: #CEC8C2;
+}
+
+/*  Business Suite
+**********************/
+
+.contactbox--business-suite {
+  background-color: $white;
+  color: $mid-gray;
+  h2::before {
+    @include borderline(#6798BA, center);
+  }
+ 	h3::after {
+    @include borderline(#6798BA, left);
+  }
+  .contact-information {
+    color: $mid-gray;
+  }
+  .contact-email {
+    color: $mid-gray;
+  }
+  .contact-information [class^="icon-"] {
+    color: $mid-gray;
+  }
+}
+
+/*  Communications Program
+**********************/
+
+.contactbox--communications {
+  background-color: $white;
+  color: $mid-gray;
+  h2::before {
+    @include borderline($mid-purple, center);
+  }
+	h3::after {
+    @include borderline($mid-purple, left);
+  }
+  .contact-information {
+    color: $mid-gray;
+  }
+  .contact-email {
+    color: $mid-gray;
+  }
+  .contact-information [class^="icon-"] {
+    color: $mid-gray;
+  }
+}
+
+/*  Math Program
+**********************/
+
+.contactbox--math {
+  background-color: $white;
+  color: $mid-gray;
+  h2::before {
+    @include borderline($baby-blue, center);
+  }
+	h3::after {
+    @include borderline($baby-blue, left);
+  }
+  .contact-information {
+    color: $mid-gray;
+  }
+  .contact-email {
+    color: $mid-gray;
+  }
+  .contact-information [class^="icon-"] {
+    color: $mid-gray;
+  }
+}
+
+
+/*  International Class
+**********************/
+
+.contactbox--international-class {
+  background-color: $white;
+  color: $mid-gray;
+  h2::before {
+    @include borderline($green-aqua, center);
+  }	
+  h3::after {
+    @include borderline($green-aqua, left);
+  }
+  .contact-information {
+    color: $mid-gray;
+  }
+  .contact-email {
+    color: $mid-gray;
+  }
+  .contact-information [class^="icon-"] {
+    color: $mid-gray;
+  }
+}
+
+/*  Entrepreneurship
+**********************/
+
+.contactbox--entrepreneurship {
+  background-color: $white;
+  color: $mid-gray;
+  h2::before {
+    @include borderline($purple-brown, center);
+  }	
+	h3::after {
+    @include borderline($purple-brown, left);
+  }
+  .contact-information {
+    color: $mid-gray;
+  }
+  .contact-email {
+    color: $mid-gray;
+  }
+  .contact-information [class^="icon-"] {
+    color: $mid-gray;
+  }
+}
+
+

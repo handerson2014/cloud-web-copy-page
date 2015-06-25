@@ -1,0 +1,138 @@
+
+
+/* Susy Settings
+**********************/
+
+$susy: (
+  columns: 12,
+  gutter-position: inside,
+  gutter-override: 40px,
+  global-box-sizing: border-box
+);
+
+
+/* Containers
+**********************/
+
+.container {
+  @include clearfix;
+  @include container(1800px); 
+  @include media(desktop-s) { 
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.container--full {
+  @include clearfix;
+  @include container(auto); 
+}
+
+.container--has-bgimage{
+  color: #FFFFFF;
+  background-repeat: no-repeat;
+  position:relative;
+  @include background-size(cover);
+}
+
+.container--with-margin-top{
+ margin-top: 100px;
+}
+
+/* Columns
+**********************/
+
+.columns-1,
+.columns-2,
+.columns-3,
+.columns-4,
+.columns-5,
+.columns-6,
+.columns-7,
+.columns-8,
+.columns-9,
+.columns-10,
+.columns-11,
+.columns-12 {
+  position: relative;
+  padding:40px;
+  @include span(12 of 12);
+}
+
+@include media(desktop-s) { 
+  .columns-1 {
+    @include span(1 of 12);
+  }
+  .columns-2 {
+    @include span(2 of 12);
+  }
+  .columns-3 {
+    @include span(3 of 12);
+  }
+  .columns-4 {
+    @include span(4 of 12);
+  }
+  .columns-5 {
+    @include span(5 of 12);
+  }
+  .columns-6 {
+    @include span(6 of 12);
+  }
+  .columns-7 {
+    @include span(7 of 12);
+  }
+  .columns-8 {
+    @include span(8 of 12);
+  }
+  .columns-9 {
+    @include span(9 of 12);
+  }
+  .columns-10 {
+    @include span(10 of 12);
+  }
+  .columns-11 {
+    @include span(11 of 12);
+  }
+  .columns-12 {
+    @include span(12 of 12);
+  }
+}
+@include media(desktop-m) { 
+  .columns-1,
+  .columns-2,
+  .columns-3,
+  .columns-4,
+  .columns-5,
+  .columns-6,
+  .columns-7,
+  .columns-8,
+  .columns-9,
+  .columns-10,
+  .columns-11,
+  .columns-12 {
+    padding: 30px;
+  }
+}
+@include media(desktop-l) { 
+  .columns-1,
+  .columns-2,
+  .columns-3,
+  .columns-4,
+  .columns-5,
+  .columns-6,
+  .columns-7,
+  .columns-8,
+  .columns-9,
+  .columns-10,
+  .columns-11,
+  .columns-12 {
+    padding: 40px;
+  }
+}
+
+/* Utilities
+**********************/
+
+.clearfix {
+  @include clearfix;
+}

@@ -1,0 +1,22 @@
+{
+    "AdministrationProfile": [
+        "Anonymous_User"
+    ],
+    "ApplicationRoles": [],
+    "Email": "spoint@laureate.corp",
+    "IsAnonymous": false,
+    "IsEmployee": false,
+    "Language": "English",
+    "LaureateID": "100004870",
+    "Name": "spoint spoint",
+    "NumericalID": "4700",
+    "PersonID": "4679",
+    "Role": [
+        "Impersonator",
+        "Staff"
+    ],
+    "University": "LIU",
+    "User_ID": "spoint@laureate.corp",
+    "userAuthMode": "",
+    "userTypeAD": null
+}

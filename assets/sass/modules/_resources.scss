@@ -1,0 +1,125 @@
+
+/* Signature Products Homepage
+**********************/
+
+.resources-signature {
+  background-color: #EEEEEE;
+  @include media(tablet) {
+    min-height: 700px;
+  }    
+  @include media(desktop-s) {
+    background-image: url("../img/signature/bg-promotional-signature-videos.jpg");
+  }  
+}
+
+.resources-signature header [class^="icon-"] {
+  color: $gray;
+	@include media(desktop-s) {
+		display: none;
+	}
+}
+
+.resources-signature h2 {
+  color: $gray;
+}
+
+.resources-signature h2:before {
+  @include media(desktop-s) {
+  	@include borderline($orange, center);
+	}
+}
+
+
+.resources-signature .container {
+  @include media(tablet) {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+  @include media(desktop-s) {
+    max-width: 1500px;
+		padding: 0;
+  }
+}
+
+
+/* Global Styles for Products Homepages
+**********************/
+
+.resource-intro {
+  background-color: $white;
+  @include media(desktop-s) { 
+    @include filter-gradient(#FCFBFB, $white, horizontal); 
+    @include background-image(linear-gradient(left bottom, #FCFBFB 50%, #FCFBFB 50%, $white 50%));
+  }
+}
+
+.resource-intro h2 {
+  color: $mid-gray;
+}
+
+.resource-intro h2::before {
+  @include borderline($yellow-resource, center);
+}
+
+.resource-preview {
+	padding: 0;
+	@include media(desktop-l) {
+		padding-top: 40px;
+	}
+}
+
+.resource-preview-details {
+  width:100%;
+  height:200px;
+  @include media(tablet){
+    margin: 0 auto;
+    height: 250px;
+  }
+	@include media(desktop-l) {
+		height: 300px;
+	}
+}
+
+.resource-preview-details a {
+	width: 100%;
+	height: 200px;
+  background-image: url("../img/signature/pic-resourcesintro.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  @include background-size(contain);
+	@include media(desktop-l) {
+		height: 250px;
+	}
+}
+
+.resource-preview-details i {
+	display: none;
+	font-size: 5rem;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.resource-preview-details h3 {
+	display: none;
+	width: 70%;
+  margin: 0 auto;  
+  font-weight: $regular;
+  @include adjust-font-size-to (18px,1.2);
+}
+
+.resource-description {
+	padding: 20px;
+	@include media(desktop-l) {
+		padding-top: 100px;
+	}
+}
+
+.resource-description > p {
+  text-align: center;
+  margin-top: 0;
+  color: $mid-gray;
+  @include adjust-font-size-to (20px);
+	@include media(desktop-l) {
+		@include adjust-font-size-to (25px);
+	}
+}

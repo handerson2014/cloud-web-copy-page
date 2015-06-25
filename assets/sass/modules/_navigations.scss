@@ -1,0 +1,619 @@
+/* Basic Navigation 
+***********************/
+
+
+
+/* Explore the Portal
+**********************/
+
+.nav-explore-the-portal {
+	width: 100%;
+	height: 100%;
+	z-index: $zIndex-2;
+	position: fixed;
+	left: 0;
+	visibility: hidden;
+	background-color: rgba($black, 1);
+	@include opacity(0);
+	@include transition-property(visibility, opacity);
+	@include transition-duration(.4s);
+}
+
+.nav-explore-the-portal > nav {
+	width: 100%;
+	height: 100%;
+	padding-left: 20px;
+	padding-bottom: 30px;
+	padding-top: 70px;
+	overflow: auto;
+	background-image: url("../img/global/bg-menu-explore-small.jpg");
+	@include media(desktop-s) {
+		width: 300px;
+		background-image: url("../img/global/bg-menu-explore.jpg");
+		@include transform(translate(-300px, -80px));
+		@include transition-property(transform);
+		@include transition-duration(.4s);
+	}
+}
+
+.nav-explore-the-portal ul {
+	border-top: 1px solid rgba($black, .5);
+	width: 87%;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.nav-explore-the-portal ul::before {
+	content: " ";
+	display: block;
+	width: 100%;
+	height: 20px;
+	width: 100%;
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-explore-the-portal h2 {
+	text-transform: uppercase;
+	color: $white;
+	font-weight: $regular;
+	@include adjust-font-size-to (13px);
+}
+
+.nav-explore-the-portal li {
+	visibility: hidden;
+	@include opacity(0);
+	@include transform(translate3d(50%, -5%, 0));
+	@include transition-property(transform, visibility, opacity);
+	@include transition-duration(.4s);
+	@include transition-delay(0.3s);
+}
+
+.nav-explore-the-portal li:nth-child(2) {
+	@include transition-delay(0.4s);
+}
+
+.nav-explore-the-portal li:nth-child(3) {
+	@include transition-delay(0.5s);
+}
+
+.nav-explore-the-portal li:nth-child(4) {
+	@include transition-delay(0.6s);
+}
+
+.nav-explore-the-portal li:nth-child(5) {
+	@include transition-delay(0.7s);
+}
+
+.nav-explore-the-portal li:nth-child(6) {
+	@include transition-delay(0.8s);
+}
+
+.nav-explore-the-portal li:nth-child(7) {
+	@include transition-delay(0.9s);
+}
+
+.nav-explore-the-portal ul:nth-child(1) li::before {
+	content: "\25CF";
+	display: block;
+	float: left;
+	padding-right: 10px;
+	padding-top: 4px;
+	color: $orange;
+}
+
+.nav-explore-the-portal ul.nav-signature li::before {
+	display: none;
+}
+
+.nav-explore-the-portal li > a {
+	height: 40px;
+	width: 100%;
+	color: #CCCCCC;
+	text-transform: uppercase;
+	font-weight: $light;
+	font-family: $ProximaNova;
+	@include adjust-font-size-to (13px);
+}
+
+.nav-explore-the-portal li > a:hover {
+	color: lighten($orange, 25%);
+}
+
+.nav-explore-the-portal [class^="icon-"] {
+	color: #F35908;
+	font-size: 1.7rem;
+}
+
+.nav-explore-the-portal li > a > span {
+	display: inline-block;
+	vertical-align: top;
+	height: 35px;
+}
+
+.nav-explore-the-portal li > a > span::after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 3px;
+	background-color: $orange;
+	@include transition-property(all);
+	@include transition-duration(.3s);
+}
+
+.nav-explore-the-portal li > a:hover > span::after {
+	width: 100px;
+}
+
+.nav-explore-the-portal li.nav-current > a > span::after {
+	content: "You are Here";
+	height: 15px;
+	text-transform: uppercase;	
+	width: 100%;
+	padding: 2px 5px;
+	color: $white;
+	@include adjust-font-size-to (10px);
+}
+
+.nav-explore-the-portal li.nav-current > a{
+	height: 75px;
+	color: lighten($orange, 25%);
+}
+
+
+/* Sticky Header Menu
+**********************/
+
+.nav-sticky {
+	display: none;
+	@include media(tablet) {
+		display: block;
+		width: auto;
+		white-space: nowrap;
+		overflow-y: hidden;
+		overflow-x: scroll;
+		text-align: center;
+		height: 150px;
+	}
+	@include media(desktop-s) {
+		height: 100px;
+	}
+	@include media(desktop-l) {
+		overflow-x: auto;
+		height: 120px;
+	}
+}
+
+.nav-sticky > li {
+	@include media(tablet) {
+		width: auto;
+		height: 80px;
+		margin-top: 20px;
+		display: inline-block;
+		@include adjust-font-size-to(13px, 0.8);
+	}
+	@include media(desktop-s) {
+		margin-top: 10px;
+		white-space: normal;
+		vertical-align: middle;
+	}
+	@include media(desktop-l) {
+		margin-top: 20px;
+	}
+}
+
+.nav-sticky > li a {
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 100%;
+	@include media(desktop-s) {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+}
+
+.nav-sticky .nav-itemname {
+	vertical-align: top;
+	text-transform: uppercase;
+	font-family: $ProximaNova;
+	font-weight: $semibold;
+	@include transition-property(all);
+	@include transition-duration(.3s);
+}
+
+.nav-sticky [class^="icon-"] {
+	display: block;
+	width: 60px;
+	height: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5px;
+	color: #999999;
+	background-color: $white;
+	@include border-radius(50em);
+	@include transition-property(all);
+	@include transition-duration(.3s);
+	@include media(desktop-l) {
+		margin-bottom: 40px;
+	}
+}
+
+.nav-sticky > li a:hover [class^="icon-"] {
+	height: 60px;
+	margin-bottom: 0;
+	font-size: 2.5rem;
+	padding-top: 10px;
+	@include media(desktop-l) {
+		margin-bottom: 10px;
+	}
+}
+
+.header-sticky.smaller .nav-sticky {
+	display: none;
+}
+
+/* Discover  - Sticky Header Menu
+**********************/
+
+.nav-sticky.nav--discover {
+	> li {
+		@include media(desktop-s) {
+			max-width: 150px;
+			@include adjust-font-size-to(11px, 0.8);
+		}
+		@include media(desktop-m) {
+			max-width: none;
+			@include adjust-font-size-to(13px, 0.8);
+		}
+	}
+	> li a {
+		border-right: 1px solid #DDDDDD;
+		@include media(desktop-s) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+		@include media(desktop-m) {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+		@include media(desktop-l) {
+			padding-left: 35px;
+			padding-right: 35px;
+		}
+	}
+	.nav-itemname {
+		color: #F35908;
+	}
+	[class^="icon-"] {
+		color: #666666;
+		background-color: transparent;
+	}
+	> li a:hover {
+		.nav-itemname {
+			color: #666666;
+		}
+		[class^="icon-"] {
+			color: $white;
+			background-color: $orange;
+		}
+	}
+}
+/* Business Suite  - Sticky Header Menu
+**********************/
+
+.nav-sticky.nav--business-suite {
+	> li a {
+		border-right: 1px solid $dark-purple;
+	}
+	.nav-itemname {
+		color: $dark-purple;
+	}
+	[class^="icon-"] {
+		color: $dark-purple;
+		background-color: transparent;
+	}
+	> li a:hover {
+		[class^="icon-"] {
+			color: $white;
+			background-color: $dark-purple;
+		}
+	}
+}
+/* Communications Program - Sticky Header Menu
+**********************/
+
+.nav-sticky.nav--communications {
+	> li a {
+		border-right: 1px solid $mid-purple;
+	}
+	.nav-itemname {
+		color: $mid-purple;
+	}
+	[class^="icon-"] {
+		color: $mid-purple;
+		background-color: transparent;
+	}
+	> li a:hover {
+		[class^="icon-"] {
+			color: $white;
+			background-color: $mid-purple;
+		}
+	}
+}
+/* Math Program - Sticky Header Menu
+**********************/
+
+.nav-sticky.nav--math {
+	> li a {
+		border-right: 1px solid $baby-blue;
+	}
+	.nav-itemname {
+		color: $baby-blue;
+	}
+	[class^="icon-"] {
+		color: $baby-blue;
+		background-color: transparent;
+	}
+	> li a:hover {
+		[class^="icon-"] {
+			color: $white;
+			background-color: $baby-blue;
+		}
+	}
+}
+/* International Class - Sticky Header Menu
+**********************/
+
+.nav-sticky.nav--international-class {
+	> li {
+		@include adjust-font-size-to(12px, 0.8);
+	}
+	> li a {
+		padding-left: 12px;
+		padding-right: 12px;
+		border-right: 1px solid $green-aqua;
+		@include media(desktop-m) {
+			padding-left: 35px;
+			padding-right: 35px;
+		}
+	}
+	.nav-itemname {
+		color: $green-aqua;
+	}
+	[class^="icon-"] {
+		color: $green-aqua;
+		background-color: transparent;
+	}
+	> li a:hover {
+		[class^="icon-"] {
+			color: $white;
+			background-color: $green-aqua;
+		}
+	}
+}
+
+.nav-sticky .go-to-class {
+	vertical-align: top;
+	padding-top: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	white-space: normal;
+}
+
+.nav-sticky .go-to-class span {
+	text-transform: uppercase;
+	display: block;
+	margin-top: 30px;
+	color: #666;
+	text-align: justify;
+	max-width: 110px;
+	font-family: $ProximaNova;
+	font-weight: $bold;
+	@include adjust-font-size-to(12px);
+	@include media(desktop-l) {
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 30px;
+		max-width: 100%;
+		@include adjust-font-size-to(14px);
+	}
+}
+
+/* Entrepreneurship - Sticky Header Menu
+**********************/
+
+.nav-sticky.nav--entrepreneurship {
+	> li a {
+		border-right: 1px solid $purple-brown;
+	}
+	.nav-itemname {
+		color: $purple-brown;
+	}
+	[class^="icon-"] {
+		color: $purple-brown;
+		background-color: transparent;
+	}
+	> li a:hover {
+		[class^="icon-"] {
+			color: $white;
+			background-color: $purple-brown;
+		}
+	}
+}
+
+/* LIUX Framework  - Sticky Header Menu
+**********************/
+
+.download-raichux {
+  color: #CECECE;
+  text-align: left;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+  span {
+    font-weight: $bold;
+    @include adjust-font-size-to(25px);
+  }
+  p {
+    font-style: italic;
+    @include adjust-font-size-to(17px);
+    margin-top: 0;
+  }
+  li {
+    float: left;
+  }
+  > li a {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+  i {
+    background: transparent;
+  }
+}
+
+/* Breadcrumbs 
+*********************/
+
+.nav-breadcrumb {    
+  padding: 0;
+  color: $mid-gray;
+  li {    
+    display: inline-block;
+    float: left;
+    margin-right: 8px;
+    a {
+        display: inline-block;
+        color: $mid-gray;
+    }
+    &::after {
+        content: '/';
+        display: inline-block;
+        margin-left: 5px; 
+    }
+    &:first-child::after {
+        content: ''; 
+    }
+  }
+  @include media(desktop-s) { 
+    padding: 20px 0;  
+  }
+}
+
+.nav-breadcrumb li a:visited, 
+.nav-breadcrumb li a:link, 
+.nav-breadcrumb li a:hover {
+    color: $mid-gray;
+}
+
+.nav-breadcrumb li.current a{    
+    color: $orange;
+    &::after {
+    content: '';
+  }
+}
+
+/* Horizontal Navigation
+*********************/
+
+.nav-simple { 
+    li {
+        width: auto;
+        height: auto;
+        font-family: $ProximaNova;
+        text-transform: uppercase;
+        font-weight: $semibold;
+        @include adjust-font-size-to(13px, 0.8);
+    }
+    li:last-child a {
+        border-right: 0;
+    }
+    li:hover a {
+        color: $mid-gray;
+    }
+    .disabled a {
+      color: #CCCCCC;
+    }
+    .disabled:hover, .disabled:hover a {
+      background: none;
+      border: 0;    
+      color: #CCCCCC;
+      cursor: not-allowed;
+    }
+    h5 {
+      text-transform: uppercase;
+      color: $mid-gray;    
+      margin: 10px 0;      
+    }
+    .nav-section {
+      border-top: 1px dotted $light-gray;      
+    }
+    .nav-section:first-child {
+      border: 0;
+    }
+}
+
+.nav-simple--horizontal {
+    ul {
+      margin-top: 20px;
+    }
+    li { 
+      width: 32.3%;
+      margin-bottom: 20px;    
+      min-height: 40px;    
+      display: inline-block;
+      text-align: center;    
+    }
+    li a {
+      border-right: 1px solid $light-gray;
+      padding: 0 25px;
+    }  
+    li:hover {
+      border-bottom: 3px solid $mid-gray;
+      @include transition-property(border-bottom);
+      @include transition-duration(.25s);
+    }
+    .current {
+      border-bottom: 3px solid $orange;
+    }
+    @include media(desktop-s) {
+        li {
+            width: auto;
+            min-height: 25px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.nav-simple--vertical {
+    ul {
+      margin-bottom: 5px;
+    }
+   li { 
+       min-height: 40px;
+       height: auto;
+   } 
+   li:hover {
+      background-color: #EEEEEE;
+      @include transition-property(background-color);
+      @include transition-duration(.20s);
+    }
+   li:last-child a {
+      border: 0;
+   }
+    li:hover a {
+        border-left: 3px solid $mid-gray;  
+        border-bottom: 0;   
+        @include transition-property(border-left);
+        @include transition-duration(.20s);
+    }
+    a {
+       border-bottom: 1px solid $light-gray;
+       border-left: 1px solid transparent;
+       padding: 20px 0 20px 10px;
+       margin: 2px 0;
+   }
+   .current a {
+      border-left: 3px solid $orange;
+      border-bottom: 1px solid $orange;   
+    }
+}
+

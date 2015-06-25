@@ -1,0 +1,56 @@
+#application: ageless-granite-820
+application: liu-backoffice
+module: default
+version: master
+runtime: python27
+api_version: 1
+threadsafe: true
+
+skip_files:
+- ^(.*/)?.*/node_modules/.*$
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.scss
+- ^(.*/)?.*\.less
+- ^/docs*
+- ^/htmlcontent*
+
+
+handlers:
+
+
+- url: /assets/(images|img|data|css|js|partials)/(.*)
+  static_files: assets/\1/\2
+  upload: assets/(images|img|data|css|js|partials)/(.*)
+  http_headers:
+    # Allow cross-origin access to web fonts and images
+    # You can also replace "*" with a specific host, e.g. https://example.org
+    Access-Control-Allow-Origin: "*"
+  expiration: "10m"
+
+
+- url: /app/(.*)
+  static_files: app/\1
+  upload: app/(.*)
+
+- url: /dist/(.*)
+  static_files: dist/\1
+  upload: dist/(.*)
+
+- url: /libs/(.*)
+  static_files: libs/\1
+  upload: libs/(.*)
+
+- url: /static/(.*)
+  static_files: static/\1
+  upload: static/(.*)
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"

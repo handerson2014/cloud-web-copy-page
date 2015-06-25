@@ -1,0 +1,719 @@
+
+
+/* Global 
+**********************/
+
+.intro {
+  text-align: center;
+  padding: 40px 0;
+  color: $white;
+  @include transition-property(background-image);
+  @include transition-duration(800ms);
+  @include transition-timing-function(cubic-bezier(0.165, 0.84, 0.44, 1));
+  @include media(tablet-p-only) {
+    padding-top: 150px;
+  }
+  @include media(tablet) { 
+    height: 100%;
+  }
+  @include media(tablet-l-only ){
+    padding-top:100px;
+  }
+  @include media(desktop-s){
+    background-attachment: fixed;
+  }
+  @include media(desktop-m){
+    padding-top: 60px;
+  }
+  @include media(desktop-l){
+    padding-top: 100px;
+  }
+}
+
+.intro .container {
+  @include transform(translateY(1px));
+  @include opacity(1);
+  @include transition-property(opacity,transform);
+  @include transition-duration(800ms);
+  @include transition-timing-function(cubic-bezier(0.165, 0.84, 0.44, 1));
+}
+
+.intro-welcome > h2 {
+  text-transform: uppercase;
+  @include adjust-font-size-to(35px);
+  @include media(tablet-p-only) {
+    @include adjust-font-size-to(45px);
+  }
+  @include media(desktop-l) {
+    @include adjust-font-size-to(50px);
+  }
+}
+
+.intro-welcome > span {
+  font-weight: $thin;
+  font-family: $ProximaNova; 
+	color: rgba($white, 0.6);
+  @include adjust-font-size-to(25px);
+  @include media(tablet-p-only) {
+  	@include adjust-font-size-to(30px);
+  }
+	@include media(desktop-l) {
+		font-weight: $regular;
+	}
+}
+
+.intro-welcome > p {
+  margin-bottom: 30px;
+  font-weight: $light;
+  @include adjust-font-size-to(20px);
+  @include media(desktop-s-only) {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    @include adjust-font-size-to (18px, 1.5);
+  }
+  @include media (desktop-l){
+    margin-bottom: 50px;
+		font-weight: $thin;
+    @include adjust-font-size-to (25px);
+  }
+}
+
+.intro-welcome [class^="icon-"] {
+  font-size: 6rem;
+  color: $white;
+  @include media(desktop-l){
+    font-size: 8rem;
+    margin-top: 20px;
+  }
+}
+
+.intro.blur .container {
+  @include media (desktop-s) {
+    @include transform(translateY(100px));
+    @include opacity(0.4);
+  }
+}
+
+.intro.blur .intro-calltoaction {
+  @include media (desktop-s) {
+    @include transform(translateY(20px));
+    @include opacity(0.1);
+  }
+}
+
+.intro-logo--centered {
+  width: 250px;
+  margin: 40px auto;
+  @include media (desktop-s) {
+     width: 400px;
+  }
+}
+
+
+/* Call to Action Sections 
+**********************/
+
+.intro-calltoaction {
+  clear: left;
+  @include transform(translateY(1px));
+  @include opacity(1);
+  @include transition-property(opacity,transform);
+  @include transition-duration(800ms);
+  @include transition-timing-function(cubic-bezier(0.165, 0.84, 0.44, 1));
+}
+
+.intro-cta-title {
+  text-transform: uppercase;  
+  display: block;
+  font-family: $ProximaNova;
+  font-weight: $bold;
+  color: $white;
+  @include adjust-font-size-to (20px);
+  @include media(desktop-l) {
+    @include adjust-font-size-to(25px);
+  }
+}
+
+.intro-cta-title::before {
+  @include borderline($orange, center);
+}
+
+.intro-calltoaction .icon-arrow-down-ligth {
+  font-size: 6rem;
+  color: $white;
+  @include opacity(.5);
+  @include animation (bouncing-arrow 2s infinite);
+  @include media(desktop-l){
+    font-size: 8rem;
+    margin-top: 20px;
+  }	
+}
+
+/* Navigation menu 
+**********************/
+
+.intro-navigation {
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+  
+  @include media (desktop-m) {
+    height: 150px;
+    margin-top: 20px;
+  }
+  @include media (desktop-l) {
+    height: 380px;
+    margin-top: 0;
+  }
+  @include media (desktop-xl) {
+    height: 410px;
+    margin-top: 0;
+  }
+	@include media (desktop-s-only) {
+    margin-top: 15px;
+    height: 190px;
+  }
+}
+
+.intro-navigation div {
+  float: left;
+  width: 49%;
+  margin-right: 1%;
+  height: 100%;
+  @include media(tablet) {
+    width: 31%;
+    margin-right: 2%;
+  }
+  @include media(desktop-s) {
+    width: 18%;
+    margin: 0 1%;
+  }
+}
+
+.intro-navigation [class^="icon-"] {
+  font-size: 4rem;
+  @include opacity(0.7);
+  @include media (desktop-l) {
+    font-size: 6rem;
+  }  
+}
+
+.intro-navigation--icon-left {
+  [class^="icon-"] {
+    float: left;
+    color: #F35908;
+    opacity: 1;
+    margin: 0;
+    font-size: 4.5rem;
+  }
+  h3 {
+    margin-top: 10px;
+    text-align: left;
+  }
+  p {
+    display: block;
+    height: auto;
+    margin-top: -30px;
+    text-align: left;
+  }
+}
+
+.intro-navigation h3 {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50px;
+  font-weight: $bold;
+  @include adjust-font-size-to(18px, 1.2);
+  @include media(desktop-m) {
+    @include adjust-font-size-to(17px, 1);
+    height: 35px;
+  }
+  @include media (desktop-l) {
+    @include adjust-font-size-to(25px, 1.8);
+    height: 45px;
+  }
+}
+
+.intro-navigation p {
+  display: none;
+  @include media(desktop-l) {
+    display: block;
+    padding-top: 5px;
+    height: 105px;
+		margin-right: auto;
+		margin-left: auto;
+		max-width: 90%;
+  	font-weight: $light;
+    font-family: $ProximaNova; 
+		@include adjust-font-size-to(16px, 1.4);
+  }
+  @include media(desktop-xl) {
+    height: 130px;
+		padding-top: 15px;
+		@include adjust-font-size-to(17px, 1.6);
+  }
+}
+
+
+/* Intro External Resources and Links
+**********************/
+
+
+.intro--with-additional-features .intro-welcome {
+  padding-bottom: 10px;
+  @include media(desktop-l) {
+    padding-bottom: 0;
+  }
+}
+
+.nav-intro-additional-features {
+  clear: left;
+  width: auto;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.nav-intro-additional-features > li {
+  display: block;
+  white-space: normal;
+  vertical-align: middle;
+  width: auto;
+  margin-bottom: 50px;
+  @include media(tablet) {
+    display: inline-block;
+    margin: 20px 50px 10px 0;
+  }
+}
+
+.intro-playvideo {
+  color: rgba($white, 1);
+  @include media(desktop-s) {
+    &:hover {
+      color: rgba($white, 0.5);
+    }
+  }
+}
+
+.nav-intro-additional-features [class^="icon-"] {
+  font-size: 4rem;
+  @include media(desktop-l) {
+    font-size: 6rem;
+    margin-top: 0;
+  }
+}
+
+.nav-intro-additional-features span {
+  display: block;
+  font-family: $ProximaNova;
+  font-weight: $bold;
+  @include adjust-font-size-to (20px);
+  @include media(tablet) {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+  }
+  @include media(desktop-l) {
+    @include adjust-font-size-to (22px);
+  }
+}
+
+.intro--with-additional-features .icon-arrow-down-ligth {
+  @include media(desktop-s) {
+    font-size: 4rem;
+  }
+  @include media(desktop-l) {
+    font-size: 5.5rem;
+    margin-top: 10px;
+  }
+}
+
+.intro--with-additional-features .intro-cta-title{
+  @include media(desktop-l) {
+    @include adjust-font-size-to (20px);
+  }
+}
+
+.intro-sociallink [class^="icon-"] {
+    font-size: 2.5rem;
+    padding-top: 8px;
+    width: 55px;
+    height: 55px;
+    background-color: #4E71A8;
+    @include border-radius(50em);
+    @include transition-property(all);
+    @include transition-duration(.2s);
+    @include media (desktop-l) {
+      width: 80px;
+      height: 80px;
+      font-size: 3.5rem;
+      padding-top: 12px;    
+    }  
+}
+
+.intro-sociallink:hover [class^="icon-"] {
+  @include media(desktop-s) {
+    background-color: transparent;
+    border: 2px solid $white;
+}
+}
+
+.intro-sociallink:visited, 
+.intro-sociallink:link, 
+.intro-sociallink:hover {
+    color: $white;
+}
+ 
+
+
+/* About Sections
+**********************/
+
+.intro-about {
+  padding: 30px;
+  @include media(desktop-l) {
+    padding: 60px;
+  }
+}
+
+.intro-about div {
+  text-align: center;
+  background-color: $white;
+  color: $mid-gray;
+  @include media(tablet) {
+    min-height: 400px;
+  }
+  @include media(desktop-s) {
+    min-height: 550px;
+  }  
+  @include media(desktop-m) {
+    padding-top: 80px;
+  }
+  @include media(desktop-l) {
+    padding-top: 120px;
+    min-height: 600px;
+  }
+}
+
+.intro-about p {
+  margin-bottom: 30px;
+  font-weight: $light;
+  @include adjust-font-size-to (18px, 1.5);
+}
+
+.intro-about h3 {
+  @include media(desktop-m) {
+    margin-bottom: 40px;
+  }
+}
+
+
+/* Discover Portal
+**********************/
+
+.intro--discover {
+  background-image: url("../img/discover/bg-intro-discover-small.jpg");
+  @include transition-property(background-image);
+  @include transition-duration(800ms);
+  @include transition-timing-function(cubic-bezier(0.165, 0.84, 0.44, 1));
+  @include media(desktop-m) {
+    background-image: url("../img/discover/bg-intro-discover.jpg");
+  }  
+}
+
+
+.intro--discover .icon-discover {
+  @include opacity(.5);
+  font-size: 8rem;
+  @include media(desktop-m) {
+    font-size: 6rem;
+  }
+  @include media(desktop-l) {
+    font-size: 15rem;
+  }  
+}
+
+.intro--discover.blur {
+  @include media (desktop-s) {
+    background-image: url("../img/discover/bg-intro-discover-blur.jpg");
+  }
+}
+
+
+/* Signature Products Portal
+**********************/
+
+.intro--signature {
+  background-image: url("../img/signature/bg-intro-signature-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-intro-signature.jpg");
+  }  
+  @include media(desktop-l) {
+    padding-top: 50px;
+  }
+	&:after {
+  	@include media(desktop-s) {
+			@include arrow-down (#995021);
+  	}
+	}
+}
+
+.intro--signature .icon-signature-products {
+  @include opacity(.7);
+}
+
+.intro--signature.blur {
+  @include media (desktop-s) {
+    background-image: url("../img/signature/bg-intro-signature-blur.jpg");
+  }
+}
+
+.intro--signature .intro-welcome {
+  @include media (tablet) {
+		padding-top: 0;
+	}
+  @include media (desktop-s) {
+		padding-top: 40px;
+	}
+}
+
+
+.intro--signature .intro-welcome h2 {
+  @include media (tablet) {
+    @include adjust-font-size-to(30px, 4);
+	}
+	@include media(desktop-l){
+    @include adjust-font-size-to(45px, 4);
+  }
+}
+
+.intro--signature .intro-welcome > [class^="icon-"] {
+  @include media(desktop-l){
+    font-size: 9rem;
+  }
+}
+
+.intro--signature .intro-welcome > p {
+  @include media(desktop-l){
+    margin-bottom: 0;
+  }
+}
+
+.intro--signature .intro-navigation p {
+  color: #FFDABF;
+}
+
+.intro--signature .intro-navigation div:nth-child(1) h3 {
+  max-width: 150px;
+}
+
+.intro--signature .intro-navigation div:nth-child(2) {
+  h3 {
+  	max-width: 220px;
+  }
+	p {
+		max-width: 75%;
+	}
+}
+
+.intro--signature .intro-navigation div:nth-child(4) {
+  h3 {
+    @include media(desktop-l){
+      max-width: 150px;
+    }
+  }
+  [class^="icon-"] {
+    @include media(desktop-l){
+      font-size: 7.2rem;
+      line-height: 6rem;
+    }
+  }
+}
+
+.intro--signature .intro-navigation div:nth-child(5) {
+  h3 {
+    @include media(desktop-l){
+      max-width: 150px;
+    }
+  }
+  [class^="icon-"] {
+    @include media(desktop-l){
+      font-size: 8rem;
+      line-height: 6rem;
+    }
+  }
+	p {
+		max-width: 75%;
+	}
+}
+
+.intro--signature .intro-cta-title {
+  @include media (desktop-l) {
+    @include adjust-font-size-to(20px, 1);
+  }
+}
+
+.intro--signature .icon-arrow-down-ligth {
+  @include media (desktop-l) {
+    font-size: 5rem;
+    margin-top: 10px;
+  }
+}
+
+.intro-about--signature {
+  background-color: #d3cfcc;
+  @include media(desktop-s) { 
+    @include filter-gradient(#d3cfcc, #dfdad6, horizontal); 
+    @include background-image(linear-gradient(left bottom, #d3cfcc 50%,#dfdad6 50%,#dfdad6 50%));
+  }
+  @include media(desktop-l) { 
+		max-width: 100%;
+  }
+}
+
+.intro-about--signature h3::after {
+  @include borderline($orange, center);
+}
+
+.intro-about--signature div:nth-child(1) {
+  background-image: url("../img/signature/bg-feature-signature-strategy.jpg");
+  color: $white;
+}
+
+.intro-about--signature div:nth-child(1) p {
+  @include media(tablet) {
+    @include adjust-font-size-to(22px, 2);
+  }
+  @include media(desktop-m) {
+		font-weight: $thin;
+    @include adjust-font-size-to(23px, 2.3);
+  }
+}
+
+.intro-about--signature div:nth-child(2) p {
+  text-align: left;
+  @include media(desktop-m) {
+    @include adjust-font-size-to(18px, 1.8);
+  }
+}
+
+
+/* Business Suite
+**********************/
+
+.intro--business-suite {
+  background-image: url("../img/signature/bg-intro-business-suite-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-intro-business-suite.jpg");
+  }  
+}
+
+.intro--business-suite.blur {
+  @include media (desktop-s) {
+    background-image: url("../img/signature/bg-intro-business-suite-blur.jpg");
+  }
+}
+
+
+/* Communications Program
+**********************/
+
+.intro--communications {
+  background-image: url("../img/signature/bg-intro-communications-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-intro-communications.jpg");
+  }  
+}
+
+.intro--communications.blur {
+  @include media (desktop-s) {
+    background-image: url("../img/signature/bg-intro-communications-blur.jpg");
+  }
+}
+
+/* Math Program
+**********************/
+
+.intro--math {
+  background-image: url("../img/signature/bg-intro-math-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-intro-math.jpg");
+  }  
+}
+
+.intro--math.blur {
+  @include media (desktop-s) {
+    background-image: url("../img/signature/bg-intro-math-blur.jpg");
+  }
+}
+
+
+/* International Class
+**********************/
+
+.intro--international-class {
+  background-image: url("../img/signature/bg-intro-international-class-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-intro-international-class.jpg");
+  }  
+}
+
+.intro--international-class.blur {
+  @include media (desktop-s) {
+    background-image: url("../img/signature/bg-intro-international-class-blur.jpg");
+  }
+}
+
+.intro--international-class .intro-welcome {
+  @include media(desktop-s-only) {
+    padding-bottom: 20px;
+  } 
+}
+
+
+/* Entrepreneurship
+**********************/
+
+.intro--entrepreneurship {
+  background-image: url("../img/signature/bg-intro-entrepreneurship-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-intro-entrepreneurship.jpg");
+  }  
+}
+
+.intro--entrepreneurship.blur {
+  @include media (desktop-s) {
+    background-image: url("../img/signature/bg-intro-entrepreneurship-blur.jpg");
+  }
+}
+
+
+/* Framework LIUX
+**********************/
+
+.intro--framework {
+  background-image: url("../img/liux/bg-intro-liux--small.jpg");
+  @include transition-property(background-image);
+  @include transition-duration(800ms);
+  @include transition-timing-function(cubic-bezier(0.165, 0.84, 0.44, 1));
+  @include media(desktop-m) {
+    background-image: url("../img/liux/bg-intro-liux.jpg");
+  }  
+  .intro-welcome [class^="icon-"] {
+    color: $orange;
+  }
+  .intro-navigation div {
+    width: 49%;
+    @include media(tablet) {
+      width: 45%;
+    }
+    @include media(desktop-s) {
+      width: 23%;
+    }
+  }
+}
+
+
+
+
+

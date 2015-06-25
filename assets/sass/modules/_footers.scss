@@ -1,0 +1,43 @@
+
+
+/*  Globals
+**********************/
+
+footer {
+  background-color: $gray;
+  color: $white;
+}
+
+footer .columns-6:nth-child(2){
+  @include media(desktop-s){
+    text-align:right;
+  }
+}
+
+footer a{
+  color: $white;
+  font-weight: $thin;
+  @include adjust-font-size-to (18px, 1.5);
+}
+
+footer li {
+  @include span(4 of 12);
+  @include media(desktop-s){
+    float:none;
+    width:10%;
+    display:inline-block;
+  }
+}
+
+footer [class^="icon-"] {
+  color: #999999;
+  @include transition-property(color);
+  @include transition-duration(.4s);
+  @include media(desktop-s) {
+    font-size: 2.5rem;
+  }
+}
+
+footer a:hover [class^="icon-"] {
+  color: $white;
+}

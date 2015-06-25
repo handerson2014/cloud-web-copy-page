@@ -1,0 +1,29 @@
+<div  class="modal modal--slidedown" ng-click="">
+
+<header class="header-modal">
+    <i class="icon-leaf"></i>
+    <div class="header-modal-branding">
+         <h2>{{modalOptions.headerText1}}</h2>
+         <h2>{{modalOptions.headerText2}}</h2>
+
+
+    </div>
+    <a ng-click="stopVideos();close();youtubePlayer.stopVideo();" class="button-close-modal"><i class="icon-close"></i>{{ modalOptions.closeButtonText}}</a>
+</header>
+
+<div class="container">
+    <div ng-show="modalOptions.contentType==='Video'" class="video-container" data-provider="Youtube">
+    </div>
+    <div ng-show="modalOptions.contentType==='Text'" class="block-container">
+        <div  class="block block-1">
+            <p>"{{modalOptions.data.content}}"</p>
+            <div class="block-note">
+                <i class="icon-author"></i>
+                <p><strong>{{modalOptions.data.author}}</strong></p>
+                <p>{{modalOptions.data.author_title}}</p>
+            </div>
+         </div>
+    </div>
+</div>
+
+</div>

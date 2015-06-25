@@ -1,0 +1,153 @@
+
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  padding: 20px;
+  visibility: hidden;
+  opacity: 0;
+  background-color: #45A2E1;
+  z-index: $zIndex-5;
+  color: $white;
+  @include transform(translateY(-125px));
+  @include transition-property(visibility,opacity,transform);
+  @include transition-duration(800ms);
+  @include transition-timing-function(cubic-bezier(0.165, 0.84, 0.44, 1));
+  @include media(tablet) {
+    height: 100px;
+    padding: 30px;
+  }
+}
+
+.alert-success {
+  background-color: #00B798;
+}
+
+.alert-warning {
+  background-color: #F28A02;
+}
+
+.alert-error {
+  background-color: #D3412C;
+}
+
+.alert-icon {
+  width: 12%;
+  height: 100%;
+  float: left;
+  font-size: 2rem;
+  color: transparentize($black, .75);
+  @include media(tablet) {
+    width: 10%;
+    font-size: 3rem;
+  }
+  @include media(desktop-s) {
+    width: 7%;
+  }
+  @include media(desktop-l) {
+    width: 4%;
+    font-size: 3.5rem;
+  }
+}
+
+.alert-message {
+  width: 70%;
+  height: 100%;
+  float: left;
+  @include media(tablet) {
+    width: 80%;
+  }
+  @include media(desktop-s) {
+    width: 85%;
+  }
+  @include media(desktop-l) {
+    width: 90%;
+  }
+}
+
+.alert-message h3 {
+  font-weight: $semibold;
+  @include adjust-font-size-to(18px, 1.2);
+  @include media(tablet) {
+    @include adjust-font-size-to(20px, 1.2);
+  }  
+  @include media(desktop-l) {
+    font-weight: $bold;
+    @include adjust-font-size-to(22px, 1.2);
+  }
+}
+
+.alert-message p {
+  margin-top: 5px;
+  @include adjust-font-size-to(11px, 1);
+  @include media(tablet) {
+    @include adjust-font-size-to(13px, 1.2);
+  } 
+  @include media(desktop-s) {
+    @include adjust-font-size-to(15px, 1.2);
+  }
+  @include media(desktop-l) {
+    font-weight: $light;
+    @include adjust-font-size-to(16px, 1.2);
+  }
+}
+
+.alert-close {
+  width: 12%;
+  height: 100%;
+  float: right;
+  text-align: right;
+  @include media(tablet) {
+    width: 10%;
+  }
+  @include media(desktop-s) {
+    width: 7%;
+  }
+  @include media(desktop-l) {
+    width: 4%;
+  }
+}
+
+.alert-close .icon-close {
+  font-size: 2rem;
+  color: transparentize($black, .75);
+  @include media(tablet) {
+    font-size: 3rem;
+  }
+}
+
+.alert.is-active {
+  visibility: visible;
+  opacity: 1;
+  @include transform(translateY(0));
+}
+
+/* No Content
+**********************/
+
+.message {
+  color: $mid-gray;
+  line-height: 2rem;
+  margin-top: 80px;
+  text-align: center;
+  > h2 {
+    font-size: 3rem;
+  } 
+  > h3 {
+    color:#999999;
+  }    
+  > h4 {
+    font-weight: $light;
+    margin-bottom: 20px;
+  }
+  > i {
+    font-size: 9rem;  
+    color: $orange;
+    text-shadow: 0px 2px #dedede;  
+  }
+  .button-default {
+    margin: auto;
+  }     
+}

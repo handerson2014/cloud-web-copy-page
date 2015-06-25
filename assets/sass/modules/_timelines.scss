@@ -1,0 +1,240 @@
+
+
+/* General Timelines Grid
+**********************/
+
+
+.grid-container {
+  width: 100%;
+  max-width: 1800px;
+  height: auto;
+  padding: 3%;   
+  background-image: url("../img/signature/catalog/bg-catalog-treeview.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-color: rgba(255, 255, 255, 0.5); 
+  margin: 0 auto 50px auto;
+  padding: 0 3% 100px 3%;
+  display: block;
+  overflow: hidden;
+   & h4 {
+     width: 100%;  
+    float: left;
+    margin-top : 40px;    
+    z-index: $zIndex-1;   
+  }    
+}
+
+.grid {
+  height: auto;  
+  min-height: 200px;    
+  float: left;
+  position: relative;
+  a {
+    display: block;
+    height: 100%;
+  }
+  &:after {
+      @extend .path;
+  }
+}
+
+
+
+.grid-5 {
+  @extend .grid;    
+  background-color: transparent;   
+  margin-bottom: 40px;      
+  @extend .block;
+  @include media(mobile-only) { 
+    width: 95%;
+    max-width: 400px; 
+  } 
+  @include media(tablet) { 
+    width: 46%;
+  }
+  @include media(desktop-s) { 
+    width: 18%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }  
+}
+
+
+
+.grid-4 {
+  @extend .grid;    
+  background-color: transparent;   
+  margin-bottom: 40px;      
+  @extend .block;
+  @include media(mobile-only) { 
+    width: 95%;
+    max-width: 400px; 
+  } 
+  @include media(tablet-p-only) { 
+    width: 46%;
+  }
+  @include media(desktop-s) { 
+    width: 20%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }  
+}
+
+.grid-preview {
+  width: 100%;
+  height: 125px;    
+  display: table;
+  padding: 10px;    
+  text-align: center;
+  & p {
+    color: $white;  
+    display: table-cell;
+    vertical-align: middle;   
+  }    
+}
+
+.grid-content {
+  width: 100%;
+  height: 50px;    
+  display: table;
+  background: $white;
+  padding: 10px;    
+  & h5 {
+    width: 60%;  
+    display: table-cell;
+    vertical-align: middle;   
+    @include adjust-font-size-to(30px);   
+  }  
+  & a {
+    color: $mid-gray;
+    display: table-cell;
+    vertical-align: middle;
+    &:hover {
+    color: $orange;
+    }
+  }    
+}
+
+
+/* Path Timelines Grid
+**********************/
+
+.path {
+  content: " ";
+  position: absolute;
+  border: solid 1px #dfe2e5;    
+  @include media(mobile-only) { 
+      height: 50%;
+      left: 50%;
+  } 
+   @include media(tablet) { 
+       display: none;
+  }     
+  @include media(desktop-s) { 
+    display: block;
+    width: 20%;    
+    top: 50%;
+    right: -21%;
+  }
+}
+
+.grid--path-last:after {
+  display: none;
+  @extend .path; 
+  @include media(desktop-s) {
+    display: block;
+    width: 50%; 
+    height: 109.5%;
+    left: 100%;  
+    right: 0;
+    border-left: transparent;   
+  }
+}
+
+.grid--path-large-last:after {
+  display: none;
+  @extend .path;     
+  @include media(desktop-s) {
+    display: block;
+    width: 125%;
+    right: 0;
+    left: 100%;
+  }
+}
+
+.grid--path-short-last:after {
+  display: none;
+  @extend .path;
+  @include media(desktop-s) {
+    display: block;
+    width: 15%; 
+  }
+}
+
+.grid--path-short-first:after {
+  display: none;
+  @extend .path;    
+  @include media(desktop-s) {
+    display: block;
+    width: 15%;
+    left: -16%;
+    right: 0px;
+    border-right: transparent;
+  }
+}
+
+
+.grid--path-first:before {
+  display: none;
+  @extend .path; 
+  @include media(desktop-s) {
+    display: block;
+    width: 570%;
+    height: 65%;
+    top: -15%;
+    left: -16%;
+    right: 0px;
+    border-right: transparent;
+    border-bottom: transparent; 
+  }
+}
+
+.grid--without-path:after {
+  border: none
+}
+
+/* 4Path Timelines Grid
+**********************/
+
+
+.grid-4.grid--path-last:after {
+  display: none;
+  @extend .path; 
+  @include media(desktop-s) { 
+    display: block;
+    width: 20%;
+    height: 74.5%;
+    border-left: transparent; 
+  }
+}
+
+.grid-4.grid--path-first:before {
+  display: none;
+  @extend .path; 
+  @include media(desktop-s) {
+    display: block;
+    width: 490%;
+    height: 65%;
+    top: -15%;
+    left: -16%;
+    right: 0px;
+    border-right: transparent;
+    border-bottom: transparent; 
+  }
+}
+
+
+
+
+

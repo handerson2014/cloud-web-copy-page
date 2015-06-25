@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Responsive front-end Framework powered by LNPS HONDURAS UX TEAM">  
+  <title>Welcome to LIUX -  LNPS HONDURAS UX TEAM</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/global/laureate.ico" />
+  <link rel="apple-touch-icon" href="../../assets/img/global/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="../../assets/img/global/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="../../assets/img/global/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/global/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="../../assets/img/global/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/global/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="../../assets/img/global/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="../../assets/img/global/apple-touch-icon-152x152.png" />
+  <link rel="stylesheet" href="../../assets/css/main.css"/>
+
+<style>
+
+.columns-6 i {
+    font-size: 5em;
+    text-align: left;
+    color: #333;
+}
+    
+.columns-6 a {
+    margin: 10px auto;
+}
+
+.columns-6 span {
+     display: block; border: 1px solid #CCC; background: white; height: 100px; width: 180px; overflow: hidden; 
+}  
+	
+.columns-12 li {
+		margin: 10px 0;
+}  
+
+      
+
+</style>
+        
+    
+</head>
+<body>
+
+<!-- :::::::::::: BEGIN STICKY VERSION :::::::::::: -->
+<header class="header-sticky smaller header-sticky--catalog">
+ <div class="header-sticky-branding">
+    <h2></h2>
+  </div>
+  
+  <a title="Back to Home" class="header-sticky-logo-laureate">
+    <i class="icon-leaf"></i>
+  </a>
+
+  <a title="Explore The Portal" class="header-sticky-button-explore button-explore">
+    <i class="icon-explore"><em></em></i>
+    <span>Explore</span>
+  </a>
+
+</header>
+    
+<!-- :::::::::::: END STICKY VERSION :::::::::::: -->
+
+    
+<!-- :::::::::::: BEGIN HEADER :::::::::::: --> 
+<header class="header-breadcrumb header-breadcrumb--catalog">
+
+    <h2>Animations</h2>
+
+</header>    
+<!-- :::::::::::: END HEADER :::::::::::: --> 
+
+    
+<!-- :::::::::::: BEGIN CONTAINER:::::::::::: -->
+        
+<div class="container">
+  <div class="columns-12">
+    
+		<section class="columns-12">
+		<h3>Basic Usage</h3>
+		<p>
+      To Use the animations on your layout add class <code>.animated-nameOfAnimation</code> or <code>.animated-nameOfAnimation--Variation</code> (if it has a variation) to your HTML element depending on what kind of animation works for your element. You can trigger the animations in two ways: 
+  	</p>
+		
+		<ul>
+			<li>1. Put Class directly on html
+				<pre>
+					<code>
+					&lti class="icon-star animated-bounce--infinite" title="icon">&lt/i>
+					</code>
+				</pre></li>
+			<li>2. Call it Dynamically using JQuery
+				<pre>
+					<code>
+						$("button").click(function () {
+						$(this).addClass("animated-rotate--left")
+						});
+					</code>
+				</pre></li>
+			
+		</ul>
+		</section>
+		
+		<section class="columns-12">
+		<h3>Types and Classes</h3>
+
+		<div class="columns-4">
+			<h4>Call to action Animations</h4>
+			
+			<p>Use it for Call to Action elements
+like <code>&ltbutton></code>, <code>&lta></code> or <code>&lticon></code>, also with important HTML elements to communicate a call to "click me". You can use it as a One- time or Infinite animation.</p>
+			<p>Please do not use on container HTML elements like <code>&ltdiv></code> or <code>&ltsection></code>.</p>
+			<ul>
+				<li>
+					<h5>Bounce</h5>
+					<p>Smooth Jumping Element</p>
+					<p><code>.animated-bounce</code></p>
+					<p><code>.animated-bounce--infinite</code></p>
+				</li>
+				<li>
+					<h5>Flash</h5>
+					<p>Bright light to illuminate elements</p>
+					<p><code>.animated-flash</code></p>
+					<p><code>.animated-flash--infinite</code></p>
+				</li>
+				<li>
+					<h5>Pulse</h5>
+					<p>Beating simulation efect</p>
+					<p><code>.animated-pulse</code></p>
+					<p><code>.animated-pulse--infinite</code></p>
+				</li>
+				<li>
+					<h5>Shake</h5>
+					<p>Smooth Left and right movement</p>
+					<p><code>.animated-shake</code></p>
+					<p><code>.animated-shake--infinite</code></p>
+				</li>
+			</ul>
+		</div>
+		
+			
+		<div class="columns-4">
+			<h4>Interaction</h4>
+			<p>Use it for interactions with HTML Container elements like <code>&ltdiv></code> or <code>&ltsection></code> and some inline elements like <code>&ltimage></code> or <code>&ltp></code>.</p>
+<p>Should be use after an event or a click, to determinates another element's state for the action that user is making.</p>
+			<ul>
+				<li>
+					<h5>Flip left</h5>
+					<p>3D Rotation for the element from right to left</p>
+					<p><code>.animated-flip--left</code></p>
+				</li>
+				<li>
+					<h5>Flip up</h5>
+					<p>3D Rotation for the element from down to up</p>
+					<p><code>.animated-flip--up</code></p>
+				</li>
+				<li>
+					<h5>Fade in</h5>
+					<p>Smooth change of opacity's element from transparent to solid fill</p>
+					<p><code>.animated-fade--in</code></p>
+				</li>
+				<li>
+					<h5>Fade out</h5>
+					<p>Smooth change of opacity's element from solid fill to transparent </p>
+					<p><code>.animated-fade--out</code></p>
+				</li>
+				<li>
+					<h5>Zoom in</h5>
+					<p>Scale the element size to big </p>
+					<p><code>.animated-zoom--in</code></p>
+				</li>
+				<li>
+					<h5>Zoom out</h5>
+					<p>Scale the element size to small </p>
+					<p><code>.animated-zoom--out</code></p>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="columns-4">
+			<h4>Whirl Animations</h4>
+			<p>Can be used for Interactions or Elements that need a loop.</p>
+			<ul>   
+				<li>
+					<h5>Rotate left</h5>
+					<p>2D rotation to left</p>
+					<p><code>.animated-rotate--left</code></p>
+				</li>
+				<li>
+					<h5>Rotate right</h5>
+					<p>2D rotation to right</p>
+					<p><code>.animated-rotate--right</code></p>
+				</li>
+				<li>
+					<h5>Spin</h5>
+					<p>Infinite loop in 2D rotation for an element</p>
+					<p><code>.animated-spin--infinite</code></p>
+				</li>
+
+			</ul>
+		</div
+    </section>
+		
+		
+		<section class="columns-12">
+		<h3>Variations</h3>
+		<p>
+      As shown on the class with variation <code>.animated-nameOfAnimation--Variation</code> this variations can be defined by Timing and Direction.
+  	</p>
+		
+		<ul>
+			<li>1. Timing - infinite
+				<pre>
+					<code>
+					&lti class="icon-star animated-spin--infinite" title="icon">&lt/i>
+					</code>
+				</pre></li>
+			<li>2. Direction - left, right, up, in, out.
+				<pre>
+					<code>
+						&lti class="icon-star animated-rotate--left" title="icon">&lt/i>
+					</code>
+				</pre></li>
+			
+		</ul>
+		</section>
+			
+			
+		<section class="columns-12">
+    <h3>Examples </h3>
+    
+    <div class="columns-6" data-sr="">
+        <h4>Bounce</h4>
+        
+        <div class="columns-6 bounce-animation" data-sr="">
+            <a class="button-default once" title="activate animation">Bounce me</a>
+            <a class="button-default infinite" title="activate animation">forever</a>            
+        </div>
+        
+        <div class="columns-6 bounce-animation" data-sr="">
+            
+            <i class="icon-download" title="button"></i>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="columns-6" data-sr="">
+        <h4>Flash</h4>
+        
+        <div class="columns-6 flash-animation" data-sr="">
+            <a class="button-default once" title="activate animation">Flash me</a>
+            <a class="button-default infinite" title="activate animation">forever</a>            
+        </div>
+        
+        <div class="columns-6 flash-animation" data-sr="">
+            
+            <i class="icon-star" title="button"></i>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="columns-6" data-sr="">
+        <h4>Pulse</h4>
+        
+        <div class="columns-6 pulse-animation" data-sr="">
+            <a class="button-default once" title="activate animation">Pulse me</a>
+            <a class="button-default infinite" title="activate animation">A heart beating</a>            
+        </div>
+        
+        <div class="columns-6 pulse-animation" data-sr="">
+            
+            <i class="icon-heart" title="button"></i>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="columns-6" data-sr="">
+        <h4>Shake</h4>
+        
+        <div class="columns-6 shake-animation" data-sr="">
+            <a class="button-default once" title="activate animation">Shake me</a>
+            <a class="button-default infinite" title="activate animation">Shake it Shake it</a>            
+        </div>
+        
+        <div class="columns-6 shake-animation" data-sr="">
+            
+            <i class="icon-arrow-left" title="button"></i>
+            
+        </div>
+        
+        
+    </div>
+   
+    
+    <div class="columns-6" data-sr="">
+        <h4>Flip</h4>
+        
+        <div class="columns-6 flip-animation" data-sr="">
+            <a class="button-default left" title="activate animation">Left</a>
+            <a class="button-default up" title="activate animation">Up</a>
+        </div>
+        
+        <div class="columns-6 flip-animation" data-sr="">
+            
+            <span></span>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="columns-6" data-sr="">
+        <h4>Fade</h4>
+        
+        <div class="columns-6 fade-animation" data-sr="">
+            <a class="button-default enter" title="activate animation">Appear</a>
+            <a class="button-default exit" title="activate animation">Dissapear </a>
+        </div>
+        
+        <div class="columns-6 fade-animation" data-sr="">
+            
+            <span></span>
+            
+        </div>
+        
+        
+    </div>
+    
+    <div class="columns-12" data-sr="">
+        <h4>Zoom</h4>
+        
+        <div class="columns-6 zoom-animation" data-sr="">
+            <a class="button-default in" title="activate animation">Zoom in</a>
+            <a class="button-default out" title="activate animation">Zoom out</a>
+        </div>
+        
+        <div class="columns-6 zoom-animation" data-sr="">
+                <img src="https://unsplash.imgix.net/uploads/1412862685615b0212e3d/5fcb0a55?fit=crop&amp;fm=jpg&amp;h=225&amp;q=75&amp;w=350">
+            
+        </div>
+        
+    </div>
+    
+
+    <div class="columns-6" data-sr="">
+        <h4>Rotate</h4>
+        
+        <div class="columns-6 rotate-animation" data-sr="">
+            <a class="button-default left" title="activate animation">left</a>
+            <a class="button-default right" title="activate animation">right</a>
+        </div>
+        
+        <div class="columns-6 rotate-animation" data-sr="">
+            
+            <i class="icon-external-link" title="button"></i>
+            
+        </div>
+        
+        
+    </div>
+    
+    
+    <div class="columns-6" data-sr="">
+        <h4>Spin</h4>
+        
+        <div class="columns-6 spin-animation" data-sr="">
+            <a class="button-default spin" title="activate animation">I like Spinning</a>
+        </div>
+        
+        <div class="columns-6 spin-animation" data-sr="">
+            
+            <i class="icon-user" title="button"></i>
+            
+        </div>
+        
+        
+    </div>
+			
+    </section>
+    
+</div>
+    
+
+        
+<!-- :::::::::::: END CONTAINER :::::::::::: -->
+        
+
+<!-- :::::::::::: BEGIN PLUGINS  :::::::::::: -->
+<script src="//use.typekit.net/wrk8joc.js"></script>
+<script src="../../assets/js/jquery-1.9.1.js"></script>
+<script src="../../assets/js/jquery-ui.min.js"></script>
+<script src="../../assets/js/scrollReveal.min.js"></script>
+<script src="../../assets/js/classie.js"></script>
+<script src="../../assets/js/ux.js"></script>
+
+<script>
+    
+$(".bounce-animation .once").click(function () {
+  $(this).parent().next().find("i").addClass("animated-bounce").delay(2000).queue(function(){
+      $(this).removeClass('animated-bounce').dequeue();
+  });
+});
+    
+$(".bounce-animation .infinite").click(function () {
+  $(this).parent().next().find("i").toggleClass("animated-bounce--infinite");
+}); 
+    
+</script>
+    
+    
+<script>
+    
+$(".flash-animation .once").click(function () {
+  $(this).parent().next().find("i").addClass("animated-flash").delay(1000).queue(function(){
+      $(this).removeClass('animated-flash').dequeue();
+  });
+});
+    
+$(".flash-animation .infinite").click(function () {
+  $(this).parent().next().find("i").toggleClass("animated-flash--infinite");
+});
+ 
+</script>
+    
+<script>
+    
+$(".pulse-animation .once").click(function () {
+  $(this).parent().next().find("i").addClass("animated-pulse").delay(2000).queue(function(){
+      $(this).removeClass('animated-pulse').dequeue();
+  });
+});
+    
+$(".pulse-animation .infinite").click(function () {
+  $(this).parent().next().find("i").toggleClass("animated-pulse--infinite");
+});
+
+</script>
+    
+<script>
+    
+$(".shake-animation .once").click(function () {
+  $(this).parent().next().find("i").addClass("animated-shake").delay(2000).queue(function(){
+      $(this).removeClass('animated-shake').dequeue();
+  });
+});
+    
+$(".shake-animation .infinite").click(function () {
+  $(this).parent().next().find("i").toggleClass("animated-shake--infinite");
+});
+
+</script>
+    
+<script>
+    
+$(".flip-animation .left").click(function () {
+  $(this).parent().next().find("span").addClass("animated-flip--left").delay(3000).queue(function(){
+      $(this).removeClass('animated-flip--left').dequeue();
+  });
+});
+    
+$(".flip-animation .up").click(function () {
+  $(this).parent().next().find("span").addClass("animated-flip--up").delay(3000).queue(function(){
+      $(this).removeClass('animated-flip--up').dequeue();
+  });
+});
+
+</script>
+    
+<script>
+    
+$(".fade-animation .enter").click(function () {
+  $(this).parent().next().find("span").addClass("animated-fade--in").delay(3000).queue(function(){
+      $(this).removeClass('animated-fade--in').dequeue();
+  });
+});
+    
+$(".fade-animation .exit").click(function () {
+  $(this).parent().next().find("span").addClass("animated-fade--out").delay(3000).queue(function(){
+      $(this).removeClass('animated-fade--out').dequeue();
+  });
+});
+
+</script>
+    
+<script>
+    
+$(".zoom-animation .in").click(function () {
+  $(this).parent().next().find("img").addClass("animated-zoom--in").delay(3000).queue(function(){
+      $(this).removeClass('animated-zoom--in').dequeue();
+  });
+});
+    
+$(".zoom-animation .out").click(function () {
+  $(this).parent().next().find("img").addClass("animated-zoom--out").delay(3000).queue(function(){
+      $(this).removeClass('animated-zoom--out').dequeue();
+  });
+});
+
+</script>
+    
+    
+<script>
+    
+$(".rotate-animation .left").click(function () {
+  $(this).parent().next().find("i").addClass("animated-rotate--left").delay(2000).queue(function(){
+      $(this).removeClass('animated-rotate--left').dequeue();
+  });
+});
+    
+$(".rotate-animation .right").click(function () {
+  $(this).parent().next().find("i").addClass("animated-rotate--right").delay(2000).queue(function(){
+      $(this).removeClass('animated-rotate--right').dequeue();
+  });
+});
+
+</script>
+    
+    
+<script>
+    
+$(".spin-animation .spin").click(function () {
+  $(this).parent().next().find("i").toggleClass("animated-spin")
+});
+
+
+</script>
+    
+<!-- :::::::::::: END PLUGINS :::::::::::: -->
+
+</body>
+</html>
+
+

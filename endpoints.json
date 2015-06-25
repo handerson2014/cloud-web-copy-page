@@ -1,0 +1,15 @@
+{
+	"/_vti_bin/wcfGetActions/Service.svc/GetHomeTilesBySite?site=intOpportunities":"fixtures/homeIO.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetHomeTilesBySite?lang=English&site=intOpportunities":"fixtures/homeIOEnglish.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetHomeTilesBySite?site=live":"fixtures/homeLive.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetHomeTilesBySite?lang=English&site=live":"fixtures/homeLive.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetHomeTilesBySite?site=faculty":"fixtures/homeFaculty.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetHomeTilesBySite?lang=English&site=faculty":"fixtures/homeFacultyEnglish.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetAllHomesSolidTiles?site=intOpportunities":"fixtures/homeSolids.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetAllHomesTiles":"fixtures/homes.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetTranslationLabels?lang=Spanish":"fixtures/labelsSpanish.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetTranslationLabels?lang=English":"fixtures/labelsSpanish.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetTranslationLabels":"fixtures/labelsEnglish.json",
+	"/_vti_bin/wcfGetActions/Service.svc/GetUserInformation":"fixtures/userInformation.json",
+	"/_vti_bin/wcfGetActions/Service.svc/CheckUserPhoto?email=spoint@laureate.corp":"http://global.laureate.net/Profile_Picture/spoint@laureate.corp_thumb_1.jpg"
+}

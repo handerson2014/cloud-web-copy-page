@@ -1,0 +1,170 @@
+/* Dropdowns 
+**********************/
+
+.nav-dropdown {
+  width: 250px;
+  clear: both;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+  z-index: $zIndex-1; 
+  @include border-radius(20px);
+  @include adjust-font-size-to(12px, 1.5);
+}
+
+.nav-dropdown-is-open {
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.05); 
+}
+
+.header-breadcrumb .nav-dropdown {
+  @include media(desktop-s) { 
+    position: absolute;
+    margin: 50px 40px 0 0;
+    right: 5%;
+  }
+  @include media(desktop-xl) { 
+    margin: 50px auto 0 auto;
+    right: 0;
+    left: 1400px;
+  }
+}
+
+.nav-dropdown h3 {
+  cursor: pointer;
+  padding: 10px 20px;
+  @include adjust-font-size-to(12px, 1.5);
+}
+
+.nav-dropdown-is-open > h3,
+.nav-dropdown:hover h3 {
+  color: $white;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+}
+
+.nav-dropdown ul {
+  width: 100%;
+  display: none;
+  padding: 20px;
+  background: $white;
+  li {
+    padding: 10px 0;
+    position: relative;
+    color: $mid-gray;
+  }
+  li.selected {
+    font-weight: 600;
+  }
+}
+
+.nav-dropdown li.selected::after,
+.nav-dropdown li.selected::before {
+  height: 2px;
+  content: "";
+  display: block;
+  position: absolute;
+  background: $mid-gray;
+}
+
+.nav-dropdown li.selected::after {
+  width: 15px;
+  right: 5px;
+  top: 20px;
+  @include transform(rotate(-45deg));
+}
+
+.nav-dropdown li.selected::before {
+  width: 8px;
+  right: 16px;
+  top: 22px;
+  @include transform(rotate(45deg));
+}
+
+.nav-dropdown-is-open ul {
+  display: block;
+  @include animation (fadeinDown 10s ease-in);
+}
+
+.nav-dropdown i {
+  width: 20px;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.nav-dropdown i::after,
+.nav-dropdown i::before {
+  height: 2px;
+  width: 12px;
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.nav-dropdown i::after {
+  right: 0;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include transform(rotate(-45deg));
+}
+
+.nav-dropdown i::before {
+  left: 0;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include transform(rotate(45deg));
+}
+
+
+/* Color Variations in SP Resources and Testimonials
+**********************/
+
+.header-breadcrumb--resource .nav-dropdown {
+  border: 1px solid $yellow-resource;
+}
+
+.header-breadcrumb--testimonial .nav-dropdown {
+  border: 1px solid $green-testimonial;
+}
+
+.header-breadcrumb--resource .nav-dropdown li {
+  border-top: 1px solid $yellow-resource;
+}
+
+.header-breadcrumb--testimonial .nav-dropdown li {
+  border-top: 1px solid $green-testimonial;
+}
+
+.header-breadcrumb--resource .nav-dropdown-is-open > h3,
+.header-breadcrumb--resource .nav-dropdown:hover h3 {
+  background-color: $yellow-resource;
+}
+
+.header-breadcrumb--testimonial .nav-dropdown-is-open > h3,
+.header-breadcrumb--testimonial .nav-dropdown:hover h3 {
+  background-color: $green-testimonial;
+}
+
+
+.header-breadcrumb--resource .nav-dropdown i {
+  &::after,
+  &::before {
+    background: $yellow-resource;
+  }
+}
+
+.header-breadcrumb--testimonial .nav-dropdown i {
+  &::after,
+  &::before {
+    background: $green-testimonial;
+  }
+}
+
+.header-breadcrumb--resource .nav-dropdown:hover i,
+.header-breadcrumb--testimonial .nav-dropdown:hover i {
+  &::after,
+  &::before {
+    background: $white;
+  }
+}

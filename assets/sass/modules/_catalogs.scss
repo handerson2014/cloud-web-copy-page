@@ -1,0 +1,783 @@
+
+
+/* General Catalog 
+**********************/
+
+body.warm {
+  background-color:  $mid-brown;
+}
+
+section.catalog {
+  width: 90%;
+  max-width: 1800px;    
+  margin: 0 auto;
+  background-color: $light-brown; 
+}
+
+.catalog {
+  h3 {
+    @include adjust-font-size-to(30px, 1.9);
+		@include media(tablet) {
+      @include adjust-font-size-to (40px, 2.3);
+    } 
+  }
+  h4 {
+    @include adjust-font-size-to (20px, 1.5);
+    @include media(tablet) { 
+       @include adjust-font-size-to (30px, 1.9);
+		}  
+	} 
+  p {
+    font-weight: $light;
+    @include adjust-font-size-to (15px, 1.8); 
+    @include media(desktop-m) {
+      @include adjust-font-size-to (18px, 2); 
+    }
+  }
+}
+
+/* Catalog boxes container
+**********************/
+
+.catalog-container.active {
+  display: block;
+}
+
+.catalog-container  {
+  display: none;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;  
+  position: relative;    
+  & > p , > h3 {    
+    color: $mid-gray;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include media(desktop-s) { 
+      padding-left: 0px; 
+    }
+  }
+  .columns-3, .columns-6 {
+    min-height: 185px;
+    height: auto;
+    border: 1px solid $light-brown; 
+    @include media(desktop-s) { 
+      height: 285px; 
+    }
+    a {
+      position: absolute;
+      bottom: 30px;
+    }
+    span {
+      color: $light-brown;
+      margin-top: 1%;
+      font-weight: $light;
+      @include adjust-font-size-to (11px);
+      @include media(tablet) { 
+        margin-top: 2%; 
+        @include adjust-font-size-to (18px, 1.8);
+      }  
+    }
+    > h4 {
+      color: $white; 
+      margin-top: 0%;    
+      @include adjust-font-size-to (18px, 1.1);
+      &:before {
+        @include borderline($red, left); 
+      } 
+      @include media(tablet) {
+        @include adjust-font-size-to (20px, 1.8);
+      }  
+      @include media(desktop-m) { 
+        @include adjust-font-size-to (30px, 1.8);
+      }   
+    }
+  }
+}
+.catalog-container-tree {
+  padding: 0;
+}
+
+/* Course Catalog 
+**********************/
+
+.catalog-course-information {
+  display: none;
+  min-height: 450px;    
+  padding-bottom: 40px;
+  background:$light-brown; 
+  & > h3 , > h4 , > p {
+    color: $mid-gray;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include media(desktop-s) { 
+      padding-left: 0px;
+    } 
+  }
+}
+
+.catalog-course-information.active {
+  display: block;
+}
+
+.catalog-course-information.course-info--withoutpadding {
+  padding: 0; 
+}
+
+.catalog-course-information.course-info--withnegativetop {
+  margin-top: -40px;    
+}
+
+.course-container {
+  height: 100%;
+  color: $mid-gray;
+  background:$light-brown; 
+  @include media(desktop-s) { 
+      min-height: 550px;
+  }
+  & > h3 {
+    width: 100%;
+    text-transform: uppercase; 
+  }    
+}
+
+.catalog-course-information--feature {
+  height: auto;
+  padding: 0;
+  border-bottom: 1px solid $light-brown;
+}
+
+.container.catalog-course-information--feature {
+  padding: 0;
+}
+
+.course-container--feature {
+  height: auto;  
+  min-height: 100%;
+  border-bottom: 1px solid $mid-brown;  
+  background: #F1EFED;
+  & > h3 {
+    text-transform: none;
+    @include adjust-font-size-to (30px, 1.8);  
+  }    
+}
+
+
+.course-container--module {
+  color: $light-brown;    
+  height: auto;
+  @include media(desktop-s) { 
+    min-height: 330px;
+  }
+  h4 {
+    color: $light-brown;
+    margin-bottom: 5%; 
+  }
+}
+
+.course-container--module .columns-3 > h4:before {
+  @include borderline($light-brown, left);     
+}
+
+.catalog-course-information img {
+  width: 250px;
+  float: left;
+  margin: 12px 30px 10px 0px;
+  border: 4px solid rgba(255, 255, 255, 0.4);
+}
+
+
+.course-title {
+  height: auto;
+  & > h5 {
+    @include adjust-font-size-to (50px); 
+  }
+  & > h3 , h4 , h5, p {
+    color: $light-brown;
+  }    
+}
+
+.course-title--special > h4 {
+  margin-top: 5%;
+  &:after {  
+    @include borderline($red, left);
+  }
+} 
+
+.course-details {
+  height: 100%;
+  color: $light-brown; 
+  background: transparent;
+  @include media(desktop-s) { 
+    min-height: 550px;
+  }
+  i {
+    position: absolute;
+    float: left;
+    margin-top: -10px;
+    left: 15px;
+    @include adjust-font-size-to (70px);  
+    @include media(desktop-s-only) { 
+      @include adjust-font-size-to (45px);  
+    }
+    @include media(desktop-m) { 
+      left: 30px;  
+    }
+  } 
+  p {
+    width: 90%;
+    float: left;
+    margin-top: 5px; 
+    span, strong {
+      width: 75%;
+      float: left;
+      margin-left: 85px;
+      @include media(desktop-s-only) {
+        margin-left: 50px;  
+      }
+    }
+  }  
+  & > h3 , h4 , p {
+    color: $light-brown;
+  }
+  
+}
+
+.course-details > h3 {
+  width: 100%;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+p.label-soon {
+  width: 200px;
+  padding: 1% 2%;
+  border: 1px solid;
+  text-align: center;
+  font-style: italic;
+}
+
+.course-details--feature {
+  height: auto; 
+  min-height: 100%;
+}
+
+.course-details--module {
+  height: auto;
+  min-height: 240px;
+  margin-top: 10px;      
+  margin-bottom: 40px;    
+  background-color: none;
+  p {
+    @include media(desktop-s) { 
+       margin-top: 36px;
+    }
+  }
+  .columns-3 {
+    height: auto;    
+    border-left: 1px solid $light-brown; 
+    border-bottom: 1px solid $light-brown;   
+    @include media(desktop-s) { 
+      height: 240px;
+    }
+    p {
+      @include media(desktop-s) {
+        @include adjust-font-size-to (16px, 1.3); 
+      }
+      @include media(desktop-m) {
+        @include adjust-font-size-to (18px, 1.6); 
+      }
+    }
+  }
+  .columns-3:nth-child(1) {
+    p {
+      margin-top: 5px;
+    }
+  }
+}
+
+.course-details--duration p span {
+  background-color: transparentize($white, 0.9);
+  padding: 2%;
+  margin-bottom: 5px;    
+  @include adjust-font-size-to (16px, 1.3);   
+}
+
+/* Catalog contact info
+**********************/
+
+.catalog-contactinfo {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 2%;  
+  a {
+      margin: auto;
+  }    
+}
+
+/* Signature Products catalogs boxes specs
+**********************/
+
+.bg-catalog {
+  display: none;
+  @include media(desktop-s) { 
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 1800px;
+    overflow: hidden;
+    padding-right: 80px;
+    > img {
+      width: 100%;
+    }
+  }
+}
+
+.catalog--lmba {
+  .catalog-container .columns-3 {
+    padding: 20px;  
+    background-color: rgba(85, 73, 89, 0.9); 
+    @include media(desktop-l) { 
+      padding: 40px;
+    }  
+    &:nth-child(odd) {
+      background: rgba(98, 83, 103, 0.9);
+    }
+    > h4 {  
+      @include adjust-font-size-to (16px, 1.1);
+      @include media(desktop-s) { 
+        @include adjust-font-size-to (20px, 1.8);
+      }
+      @include media(desktop-m) { 
+        @include adjust-font-size-to (28px, 1.8);
+      }
+    }
+  }
+}
+
+.catalog--minors .catalog-container .columns-3 {
+  background-color: rgba(110, 167, 207, 0.9); 
+  &:nth-child(odd) {
+  background: rgba(116, 178, 222, 0.9);
+  }      
+}
+
+.catalog--internationalclass .catalog-container .columns-3 {
+  background-color: $green-aqua; 
+  &:nth-child(odd) {
+  background: rgba(79, 102, 116, 0.9);
+  }    
+}
+
+.catalog--entrepreneurship .catalog-container .columns-3 {
+  background-color: #6C6C6E; 
+  &:nth-child(odd) {
+  background: rgba(148, 148, 150, 0.9);
+  }    
+}
+
+.catalog--math .catalog-container .columns-6 {
+  background-color: $highlight-blue; 
+  &:nth-child(odd) {
+  background: rgba(16, 148, 230, 0.9);
+  }    
+}
+
+/* Signature Products catalogs courses specs
+**********************/
+
+.catalog--lmba {
+  .course-details, .catalog-course-information {
+    background-color: $dark-purple;
+  }
+}
+
+.catalog--minors {
+  .course-details, .catalog-course-information--feature   {
+    background-color: $baby-blue;
+  }
+  .catalog-course-information--feature, .course-container--feature, .course-details  {
+    @include media(desktop-s) { 
+      min-height: 410px;
+    }
+  }
+}
+
+.catalog--math {
+  .course-details, .catalog-course-information.course-info--withoutpadding { 
+    background-color: $highlight-blue;
+  }
+  .course-details--module {
+    .columns-3:nth-child(1) {
+      background-color: $highlight-blue;
+    }
+    .columns-3 {
+      background-color: #1094E6;
+    }
+  }
+  .course-container-module--hasbgcolor {
+    background-color: $highlight-blue;  
+  }
+  .course-container-module--hasarrow {
+    overflow: visible;
+    @include media(desktop-s){
+      position: relative;
+      min-height: 460px;
+      &:after { 
+        @include arrow-down($highlight-blue);
+      }
+    }
+  }
+  .course-container-module--hasarrow .columns-3 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    @include media(desktop-s){
+      padding: 40px 10px;
+    }
+  }
+  .course-container-module--hasarrow .columns-3:nth-child(1) {
+    padding-top: 40px;
+  }
+  .course-container-module--hasarrow .columns-3:nth-child(4) {
+    padding-bottom: 40px;
+  }
+  .course-container-module--withheadercolor {
+    background-color: opacify($white, 0.5);
+    border: 1px solid $light-brown;
+    border-right: 1px solid $light-brown;   
+  }
+  .course-container-module--withheadercolor ul {
+    color: $highlight-blue;
+    padding: 5%;    
+  }
+  .course-container--module.course-container-module--withheadercolor li {
+    margin-bottom: 5%;     
+    color: $gray;    
+  }
+  .course-container-module--withheadercolor h4 {
+    background: #1094E6;
+    padding: 50px;
+  }
+  .course-container-module--withheadercolor .columns-3, .course-container-module--withheadercolor.container {
+  padding: 0;
+  }
+  .course-container--module li {
+    color: $light-brown; 
+    @include bulletlist; 
+    margin-bottom: 20px;
+  }
+}
+
+.catalog--internationalclass {
+  .catalog-course-information{
+    background-color: $green-aqua;
+  }
+}
+
+.catalog--entrepreneurship {
+  .catalog-course-information--feature {
+    background-color: #6C6C6E;
+  }
+  .catalog-course-information--feature, .course-container--feature, .course-details  {
+    @include media(desktop-s) { 
+      min-height: 360px;
+    }
+  }
+}
+
+/* Signature Products Communication Catalog
+**********************/
+
+.header-breadcrumb--communications .switch-view {
+  border: 1px solid #737499;
+}
+
+.catalog--communications {
+  .catalog-container {
+    color: $mid-gray;
+    margin-top: 0;
+  }
+  .catalog-course-information--feature {
+    border: 1px solid $light-brown;
+  }
+  .catalog-course-information--feature, .course-title, .course-container--feature {
+    @include media(desktop-s) {
+      min-height: 300px;
+    }  
+  }
+  .course-details--module {
+    p {
+      @include media(desktop-s) { 
+        margin-top: 5px;
+      }
+      @include media(desktop-m) { 
+        margin-top: 36px;
+      }
+    }
+  }
+  .course-details--module .columns-3:nth-child(4) {
+    margin-bottom: 10px;  
+  }
+  .catalog-course-information.module-level--1 {
+    .course-title, .catalog-course-information--feature {
+      background-color: #737499;    
+    }
+  }
+  .catalog-course-information.module-level--2 {
+    .course-title, .catalog-course-information--feature {
+      background-color: #8C84B8;     
+    }
+  }
+  .catalog-course-information {
+    > h4 {
+      margin-top: 30px;
+      margin-bottom:  30px;
+    }
+  }
+  
+/* Tree Communications
+**********************/
+  
+  .module-level--1 .course-details .columns-3 {
+    color: $light-brown;    
+    background-color: #737499;
+  }
+  
+  .module-level--2 .course-details .columns-3 { 
+    background-color: #8C84B8;
+  }
+  
+  .course-title {
+    background-color: #737499;
+  } 
+  
+  .module-level--1 {
+    color: #737499; 
+    & .grid-preview {
+      background-color: #737499;  
+    }
+    & > h4, h5 {
+      color: #737499;
+    }  
+    & .course-title > h5 {
+      color: $light-brown;
+    } 
+  }
+  
+  .module-level--2 {
+    color: #8C84B8;
+    & .grid-preview {
+      background-color: #8C84B8;  
+    }
+    & > h4, h5 {
+      color: #8C84B8;
+      } 
+    & .course-title > h5 {
+      color: $light-brown;
+    } 
+  }
+}
+
+/* Switch view
+**********************/
+
+.switch-view {
+  width: 220px;
+  margin-bottom: 60px;    
+  clear: both;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+  border: 1px solid;
+  @include border-radius(20px);
+  @include adjust-font-size-to(12px, 1.5);
+  @include media(desktop-s) {
+    width: 250px;
+  }  
+  li {
+  width: 50%;
+  float: left;
+    &:hover {
+      background-color: transparentize($gray, 0.9);
+    } 
+    a {
+      padding: 10px 20px;
+      @include media(desktop-s) {
+        padding: 10px 25px;
+      }
+    }
+  } 
+}
+
+.switch-view li.selected {
+  background-color: #737499;
+  color: $light-brown;    
+} 
+
+.header-breadcrumb .switch-view {
+  @include media(desktop-s) { 
+    position: absolute;
+    margin: 50px 40px 0 0;
+    right: 5%;
+  }
+  @include media(desktop-xl) { 
+    margin: 50px auto 0 auto;
+    right: 0;
+    left: 1400px;
+  }
+}
+
+/* Global Styles for Products Homepages
+**********************/
+
+.catalog-intro {
+  background-color: #F5F4F3;
+}
+
+.catalog-intro h2 {
+  color: $mid-gray;
+}
+
+
+.catalog-intro h2::before {
+  @include borderline($orange, center);
+}
+
+.catalog-preview {
+  height: 200px;
+  display: table; 
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+  background-color: $gray;
+  @include background-size(cover);
+  @include media(desktop-s) {
+    height: 320px;
+  }
+}
+
+.catalog-preview-details {
+  width: 100%;
+  height: 100px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.catalog-preview-details h3 {
+  color: $white;
+  @include adjust-font-size-to (30px, 2);
+} 
+
+
+.catalog-preview-details p {
+  color: $white;
+} 
+
+.catalog-preview-details h3::after {
+  @include borderline($orange, center);
+} 
+
+/* Business Suite Homepage
+**********************/
+
+.catalog--minors.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-minors-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-catalog-preview-minors.jpg");
+  }  
+}
+
+.catalog--lmba.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-lmba-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-catalog-preview-lmba.jpg");
+  }  
+}
+
+/* Communications Program Homepage
+**********************/
+
+.catalog--presentation-skills.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-presentation-skills-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-catalog-preview-presentation-skills.jpg");
+  }  
+}
+
+.catalog--media-literacy.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-media-literacy-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-catalog-preview-media-literacy.jpg");
+  }  
+}
+
+/* Math Program Homepage
+**********************/
+
+.catalog--arithmetic.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-arithmetic-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-catalog-preview-arithmetic.jpg");
+  } 
+}
+
+.catalog--math-management.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-math-management-small.jpg");
+  @include media(desktop-m) {
+    background-image: url("../img/signature/bg-catalog-preview-math-management.jpg");
+  } 
+}
+
+/* International Class Homepage
+**********************/
+
+.catalog--international-class {
+  .catalog-preview-details h3 {
+    color: $white;
+    @include adjust-font-size-to (30px, 2);
+    @include media(desktop-s) {
+      @include adjust-font-size-to (20px, 2);
+    }
+    @include media(desktop-l) {
+      @include adjust-font-size-to (30px, 2);
+    } 
+  }
+  .catalog-preview-details p {
+    display: block;
+    @include media(desktop-s) {
+      display: none;
+    }
+    @include media(desktop-m) {
+      display: block;
+    }
+  } 
+}
+
+.catalog--consumer-behavior.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-consumer-behavior-small.jpg");
+}
+
+.catalog--corporate-social.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-corporate-social-small.jpg");
+}
+
+.catalog--entrepreneurship.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-entrepreneurship-small.jpg");
+}
+
+.catalog--marketing.catalog-preview {
+  background-image: url("../img/signature/bg-catalog-preview-marketing-small.jpg");
+}
+
+/* Entrepreneurship Homepage
+**********************/
+
+.catalog--entrepreneurship {
+  .catalog-preview:nth-child(even) {
+    background-color: #98989A;
+  }
+  .catalog-preview:nth-child(odd) {
+    background-color: #737375;
+  }
+}

@@ -1,0 +1,454 @@
+
+
+/*  Globals
+**********************/
+
+.feature header {
+  color: $white;
+}
+
+.feature header [class^="icon-"] {
+  color: $white;
+}
+
+.feature img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  @include media(tablet) {
+    width: auto;
+  } 
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature .container > div {
+  text-align: center;
+  background-color: $white;
+  @include media(desktop-s) {
+    min-height: 850px;
+    margin-bottom: 40px;
+  }  
+}
+
+.feature p {
+  margin-bottom: 30px;
+  font-weight: $light;
+  @include adjust-font-size-to (18px, 1.5);
+}
+
+.feature--withbenefits {
+  padding: 100px 0;
+}
+
+.feature--withbenefits li {
+  @include adjust-font-size-to (16px, 1.4);
+  @include bulletlist;
+}
+
+.feature--withbenefits p {
+  @include adjust-font-size-to (22px);
+  font-weight: $light;
+}
+
+.feature--withbenefits h3 {
+  text-align: left;
+}
+
+
+/* Discover Portal - Ebooks
+**********************/
+
+.feature--ebooks {
+  background-color: #FFBB66;
+  color: #484135;
+}
+
+.feature--ebooks p {
+  @include media(desktop-l) {
+    margin-bottom: 0;
+  }
+}
+
+.feature--ebooks .container div:nth-child(2) {
+  background-color: #FFF0D9;
+}
+
+.feature--ebooks h3 {
+  @include media(desktop-s) {
+    min-height: 100px;
+    margin-top: 40px;
+  }
+  @include media(desktop-l) {
+    min-height: 80px;
+    margin-top: 30px;
+    @include adjust-font-size-to(35px);
+  }
+}
+
+.feature--ebooks h3::after {
+  @include borderline(#FFBC5E, center);
+}
+
+.feature--ebooks li {
+  padding-top: 25px;
+  @include clearfix;
+  @include media(desktop-l) {
+    padding-top: 40px;
+  }
+}
+
+.feature--ebooks li img {
+  width: 35%;
+  float: left;
+  margin-right: 5%;
+  @include media(desktop-l) {
+    width: 40%;
+  }
+}
+
+.feature--ebooks li span {
+  float: right;
+  display: block;
+  width: 60%;
+  text-align: left;
+  @include adjust-font-size-to(18px);
+  @include media(desktop-l) {
+    width: 55%;
+    margin-top: 20px;
+    @include adjust-font-size-to(20px, 1);
+  }
+}
+
+.feature--ebooks li a {
+  float: right;
+  width: 60%;
+  text-align: left;
+  text-decoration: underline;
+  color: #463F33;
+  @include adjust-font-size-to (14px);
+  @include media(desktop-l) {
+    width: 55%;
+    @include adjust-font-size-to(16px);
+  }
+  &:hover {
+    color: #FFBB66;
+    text-decoration: none;
+  }  
+}
+
+.feature--ebooks .button {
+  @include media(desktop-s) {
+    position: absolute;
+    bottom: 40px;
+    left: 25%;
+    right: 25%;
+  }
+}
+
+.feature--ebooks .columns-4:nth-child(2) p {
+  @include media(desktop-s) {
+    margin-top: 50px;
+  }  
+}
+
+.feature--ebooks .columns-4:nth-child(3) p {
+  @include media(desktop-s) {
+    margin-top: 20px;
+  }  
+  @include media(desktop-l) {
+    margin-bottom: 20px;
+  }  
+}
+
+.feature--ebooks .note {
+  background-color: #FFF7EB;
+  text-align: justify;
+  padding: 20px;
+}
+
+.feature--ebooks .note span{
+  display: block;
+  margin-top: 10px;
+  @include adjust-font-size-to(14px, 1);
+}
+
+.feature--ebooks .note a{
+  color: #484135;
+  font-weight: $bold;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: inline;
+  &:hover {
+    color: #FFBB66;
+    text-decoration: none;
+  }
+}
+
+
+/* Discover Portal - Harvard
+**********************/
+
+.feature--harvard h2 {
+  color: $red;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.feature--harvard .columns-6:nth-child(2) {
+  background-image: url("../img/discover/bg-feature-harvardbusiness-small.jpg");
+  @include media(desktop-s) {
+    background-image: url("../img/discover/bg-feature-harvardbusiness.jpg");
+  }
+}
+
+.feature--harvard .columns-6:nth-child(2) p {
+  text-align: left;
+  @include media(desktop-l) {
+    margin-top: 100px;
+  }
+}
+
+.feature--harvard .columns-6:nth-child(2) h3::before {
+  @include borderline($red, left);
+}
+
+.feature--harvard .note {
+  background-color: rgba($red, 0.5);
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.feature--harvard .note a {
+  color: $white;
+  font-weight: $bold;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: inline;
+  &:hover {
+    color: #FFEEBF;
+    text-decoration: none;
+  }
+}
+
+
+/* Discover Portal - Multimedia 
+**********************/
+
+.feature--multimedia h3 {
+  @include media(desktop-s) {
+    min-height: 100px;
+    margin-top: 40px;
+  }
+  @include media(desktop-l) {
+    @include adjust-font-size-to(35px, 2);
+  }
+}
+
+.feature--multimedia {
+  background-color: #6C6BBC;
+  color: #423F58;
+}
+
+.feature--multimedia .container > div:nth-child(2) {
+  background-color:#F1F0F9;
+}
+
+.feature--multimedia .columns-6:nth-child(1) p {
+  @include media(desktop-l) {
+    margin-top: 40px;
+    @include adjust-font-size-to(20px, 2);
+  }
+}
+
+.feature--multimedia .columns-6:nth-child(2) p {
+  @include media(desktop-l) {
+    margin-top: 50px;
+    @include adjust-font-size-to(25px, 2);
+  }
+}
+
+.feature--multimedia h3::after {
+  @include borderline(#6C69BE, center);
+}
+
+.feature--multimedia .button {
+  @include media(desktop-s) {
+    position: absolute;
+    bottom: 50px;
+    left: 25%;
+    right: 25%;
+  }
+}
+
+
+/* Discover Portal - Repositories
+**********************/
+
+#feature-institutionalrepositories h2 {
+  color: #AE3006;
+  @include media(desktop-s) {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.feature-institutionalrepositories .columns-6:nth-child(2) {
+  background-image: url("../img/discover/bg-feature-institutionalrepositories-small.jpg");
+  @include media(desktop-s) {
+    background-image: url("../img/discover/bg-feature-institutionalrepositories-small.jpg");
+  }
+}
+
+.feature-institutionalrepositories .columns-6:nth-child(2) p {
+  text-align: left;
+  @include media(desktop-s) {
+    margin-top: 130px;
+  }
+}
+
+.feature-institutionalrepositories .columns-6:nth-child(2) h3::before {
+  @include borderline(#AE3006, left);
+}
+
+.feature-institutionalrepositories .columns-6:nth-child(2) .note {
+  background-color: rgba($red, 0.5);
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.feature-institutionalrepositories .columns-6:nth-child(2) .note a{
+  color: $white;
+  font-weight: $bold;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: inline;
+}
+
+
+/* Discover Portal - Library
+**********************/
+
+.feature--library {
+  background-color: #86B55F;
+  color: #2A3D19;
+}
+
+.feature--library h3 {
+  @include media (desktop-s) {
+    margin-top: 10px;
+    margin-bottom: 30px;  
+  }
+  @include media(desktop-l) {
+    margin-bottom: 40px;
+    margin-top: 20px;
+    @include adjust-font-size-to(35px, 2);
+  }
+}
+
+.feature--library p {
+  @include media(desktop-s) {
+    @include adjust-font-size-to (16px, 1.4);
+  }
+  @include media(desktop-l) {
+    @include adjust-font-size-to (18px, 1.8);
+  } 
+}
+
+.feature--library a {
+  color: #86B55F;
+  text-decoration: underline;
+  display: inline;
+}
+
+.feature--library .columns-6 {
+  background-color: #F2F7EE;
+  @include media(desktop-s) {
+    background-color: $white;
+    padding: 0;
+  }
+}
+
+.feature--library .columns-6 div{
+  @include media(desktop-s) {
+    padding: 30px;
+    height: 425px;
+    text-align: justify;
+  }
+}
+
+.feature--library .columns-6 img{
+  @include media(desktop-s) {
+    display: block;
+    float: left;
+    width: 35%;
+    margin-right: 10%;
+    margin-bottom: 10px;
+  }
+  @include media(desktop-l) {
+    margin-right: 5%;
+    max-width: 175px;
+  }
+}
+
+.feature--library .columns-6:nth-child(1) div:nth-child(2),
+.feature--library .columns-6:nth-child(2) div:nth-child(1) 
+{  
+  @include media(desktop-s) {
+    background-color: #F2F7EE;
+  }
+}
+
+.feature--library h3::after {
+  @include borderline(#85B65A, center);
+  @include media(desktop-s) {
+  @include borderline(#85B65A, left);
+  }
+}
+
+/* Signature Products Presence  
+**********************/
+
+.presence-intro {
+  background-color: #F5F4F3;
+  h2 {
+      color: #666666;
+      
+      &:before {
+          @include borderline($orange, center);
+      }
+  }
+    
+  ul {
+    width: 90%;  
+    margin: auto;
+    text-align: center;
+    @include media(desktop-s) {
+      width: 100%;
+    }    
+  }
+}
+
+.presence-intro ul li {
+    display:inline-block;
+    margin: 10px;
+    margin-bottom: 40px;
+    @include media(tablet) {
+      width: 30%;
+    }
+    @include media(desktop-s) {
+      width: 14%;
+    }
+  & img {
+    width: 140px;
+    height: 80px;
+    @include media(desktop-l) {
+    width: 200px;
+    height: 120px;
+    }
+  }
+}
+ 

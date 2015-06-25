@@ -1,0 +1,209 @@
+
+/* labels 
+**********************/
+
+
+@mixin label-soon ($bgcolor) {
+  width: 200px;
+  padding: 1% 2%;
+  border: 1px solid;
+  text-align: center;
+  font-style: italic;
+}
+
+
+/* Arrows
+**********************/
+
+
+@mixin arrow-down ($bgcolor) {
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 20px solid ($bgcolor);
+  position: absolute;
+  content: "";
+}
+
+
+/* Adds the border line over the titles
+**********************/
+
+@mixin borderline ($border-color, $align) {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100px;
+  margin: 10px 0;
+  background-color: $border-color;
+  @if $align == 'center' {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Creates bullet point lists 
+**********************/
+
+@mixin bulletlist {
+  background-image: url("../img/icons/icon-two-circles.svg");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  text-align: left;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  font-weight: $light;
+  ul{
+    margin-top: 10px;
+  }
+  li {
+    background-image: url("../img/icons/icon-one-circle.svg");
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Arrows
+**********************/
+
+
+@mixin arrow-down ($bgcolor) {
+  display: block;
+	width: 0;    
+  content: "";	
+	border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 20px solid ($bgcolor);
+  margin: auto;
+	position: absolute;
+  left:0;
+  right:0;
+	bottom: -20px;
+	z-index: $zIndex-1; 
+}
+
+/* Button creation 
+**********************/
+
+
+@mixin button ($bgcolor) {
+  width: 160px;
+  height: 40px;
+  text-transform:uppercase;
+  text-align:center;
+  font-family: $ProximaNova;
+  font-weight: $bold;
+  color: $white;
+  background-color: $bgcolor;
+  @include border-radius(50em);
+  @include adjust-font-size-to (14px, 2.5);
+  @include box-shadow(0 3px 0 0 rgba($black, 0.10));
+  @include transition-property(box-shadow, background-color, border-radius);
+  @include transition-duration(.4s);
+  &:hover {
+    background-color: lighten($bgcolor, 75%);
+    box-shadow: inset 0 0 0 2px $bgcolor;
+    color: $bgcolor;
+  }
+}
+
+@mixin button-icon ($bgcolor) {
+  i {
+      margin-right: 10px;
+      @include adjust-font-size-to (30px, 2.5);
+  }
+}
+
+
+/* Adds a background to any HTML element
+**********************/
+
+@mixin pseudo-element-bg ($bgcolor) {
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    margin: auto;
+    position: absolute;
+    background-color: $bgcolor;
+}
+
+
+/* Changes the color of the Explore the Portal button
+**********************/
+
+@mixin explore-the-portal-button ($bgcolor, $color) {
+  .icon-explore em {
+    @include media(tablet) { 
+      background: $color;
+    }
+  }
+  .icon-explore::after {
+    @include media(tablet) { 
+      background: $color;
+    }
+  }
+  .icon-explore::before {
+    @include media(tablet) { 
+      background: $color;
+    }
+  }
+  .header-button-explore {
+    @include media(tablet) { 
+      background-color: $bgcolor;
+      color: $color;
+    }
+  }
+  .button-explore:hover {
+    em {
+      background: $bgcolor;
+    }
+    .icon-explore::before {
+      background: $bgcolor;
+    }
+    .icon-explore::after {
+      background: $bgcolor;
+    }
+    @include media(tablet) {
+      background-color: $color; 
+      color: $bgcolor;
+    }  
+  }
+}
+
+
+/* Changes the color of the Support button 
+**********************/
+
+@mixin help-button ($bgcolor, $color) {
+  .header-button-help {
+    @include media(tablet) { 
+      background-color: $bgcolor;
+      color: $color;
+    }
+  }
+  .header-button-help:hover {
+    color: $bgcolor;
+    @include media(tablet) {
+      background-color: $color; 
+    }  
+  }
+}
+
+/* Changes the color of the Support button 
+**********************/
+
+@mixin help-button ($bgcolor, $color) {
+  .header-button-help {
+    @include media(tablet) { 
+      background-color: $bgcolor;
+      color: $color;
+    }
+  }
+  .header-button-help:hover {
+    color: $bgcolor;
+    @include media(tablet) {
+      background-color: $color; 
+    }  
+  }
+}

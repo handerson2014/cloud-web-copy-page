@@ -1,0 +1,908 @@
+
+
+/* Globals
+**********************/
+
+header {
+  width: 100%;
+  @include clearfix;
+}
+
+section > header {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}  
+
+section > header > span {
+  display: block;
+  @include adjust-font-size-to(20px,1.8);
+  @include media(desktop-l) {
+    @include adjust-font-size-to(25px, 2);
+    font-weight: $light;
+  }
+}  
+
+section > header > p {
+  display: block;
+  @include adjust-font-size-to(20px,1.8);
+  @include media(desktop-l) {
+    @include adjust-font-size-to(25px, 2);
+    font-weight: $light;
+  }
+} 
+
+section > header > h2 {
+  @include media(desktop-l) {
+    @include adjust-font-size-to(50px);
+  }
+}
+
+.header--centered {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header--has-icons h2 {
+  @include media(tablet) { 
+    display: inline-block;
+  }
+}
+
+
+/* Main Header 
+**********************/
+
+.header-main {
+  min-height: 60px;
+  padding: 20px;
+  position: absolute;
+  z-index: $zIndex-3; 
+  @include media(tablet) { 
+    padding: 40px;
+    padding-bottom: 0;
+  }
+}
+
+
+/*  Main Header - Explore the Portal
+**********************/
+
+.header-button-explore {
+  overflow: hidden;
+  float: left;
+  width: 25%;
+  @include transition-property(background-color, transform);
+  @include transform(translateX(0));
+  @include transition-duration(.4s);
+  @include media(tablet) { 
+    padding-left: 20px;
+    width: 160px;
+    height: 40px;
+    background-color: $orange;
+    color: $white;
+    @include border-radius(50em);
+  }
+  @include media(desktop-s) {
+    width: 220px;
+  }
+}
+
+.icon-explore {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position:relative;
+  margin-top: 13px;
+  @include media(tablet) { 
+    float: left;
+  }  
+}
+
+.icon-explore em {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background: $white;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include transition-delay(0.4s);
+}
+
+.icon-explore::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  background: $white;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include transition-delay(0.4s);
+}
+
+.icon-explore::before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $white;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include transition-delay(0.4s);
+}
+
+.header-button-explore > span {
+  display: none;
+  @include media(tablet) {
+    display: block;
+    text-transform:uppercase;
+    float: left;
+    width: 80px;
+    margin-top: 5px;
+    font-weight: $regular;
+    font-family: $ProximaNova;
+    @include adjust-font-size-to(13px);
+  }
+  @include media(desktop-s) {
+    width: 150px;
+  }
+}
+
+.button-explore:hover {
+  em {
+    background: $orange;
+  }
+  .icon-explore::before {
+    top: -3px;
+    background: $orange;
+  }
+  .icon-explore::after {
+    top: 13px;
+    background: $orange;
+  }
+  @include media(tablet) {
+    background-color: $white; 
+    color: $orange;
+  }  
+}
+
+
+/* Main Header - Laureate Logo
+**********************/
+
+.header-logo-laureate {
+  text-align: right;
+  float: left;
+  width: 25%;
+  @include media(desktop-l){
+    width: 50%;
+    margin-left: -300px;
+  }
+}
+
+.header-logo-laureate > .icon-leaf {
+  color: $white;
+  display: inline;
+  font-size: 3.5rem;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+}
+
+.header-logo-laureate::after {
+  content: "";
+  height: 35px;
+  width: 1px;
+  border-right: 1px solid rgba($white, 0.4);
+  display: inline-block;
+  margin-top: 5px;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.header-logo-laureate:hover > .icon-leaf {
+  color: $white;
+}
+
+
+/* Main Header - Login
+**********************/
+
+.header-login-container {
+  float: left;
+  width: 25%;
+  display: block;
+}
+
+.header-login-container > img {
+  width: 40px;
+  height: 40px; 
+  border: 1px solid rgba($white, 0.75);
+  @include border-radius(50em);
+  @include transition-property(border-size);
+  @include transition-duration(.3s);
+  @include media(tablet) { 
+    float: left;
+    margin-right: 10px;
+  }  
+}
+
+.header-login-name {
+  display: none;
+  @include media(tablet) {
+    display: table-cell;
+    vertical-align: middle;
+    text-transform: uppercase;
+    height: 40px;
+    font-weight: $regular;
+    color: $white;
+    font-family: $ProximaNova;
+    @include adjust-font-size-to(12px); 
+  }  
+  @include media(desktop-s) {
+    margin-top: 8px;
+    display: block;
+    height: 15px;
+    font-weight: $bold;
+    @include adjust-font-size-to(16px, 1);
+  }
+}
+
+.header-login-email {
+  display: none;
+  @include media(desktop-l) { 
+    display: block;
+    color: $white;
+    font-weight: $light;
+    @include adjust-font-size-to(13px, 1);
+  }
+}
+
+.login--non-user {
+    text-transform: none;
+    max-width: 200px;
+}
+
+.header-login-container:hover { 
+  img {
+    border: 2px solid rgba($white, 0.75);
+  }
+  .header-login-email {
+    color: transparentize($white, 0.5);
+  }
+  .header-login-name {
+    color: transparentize($white, 0.5);
+  }
+}
+
+/* Main Header - Help Button
+**********************/
+
+.header-button-help {
+  text-align: right;
+  float: right;
+  width: 25%;
+  display: block;
+  color: $white;
+  @include media(tablet) { 
+    width: 160px;
+    height: 40px;
+    text-align: left;
+    padding-left: 10px;
+    background-color: $orange;
+    @include border-radius(50em);
+  }
+}
+
+.header-button-help > .icon-help-bold {
+  font-size: 2.5rem;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include media(tablet) { 
+    float: left;
+    margin-top: 4px;
+    margin-right: 10px;
+    margin-left: 5px;
+    font-size: 1.8rem;  
+  }
+}
+
+.header-button-help > span {
+  display: none;
+  @include media(tablet) {
+    display: block;
+    float: left;
+    width: 100px;
+    margin-top: 5px;
+    text-transform:uppercase;
+    font-family: $ProximaNova;
+    font-weight: $regular;
+    @include adjust-font-size-to(13px);
+  }
+}
+
+.header-button-help:hover {
+  color: $orange;
+  @include media(tablet) { 
+    background-color: $white;
+  }
+}
+
+
+
+/* Sticky Header 
+**********************/
+
+.header-sticky {
+  position: absolute;
+  z-index: $zIndex-1;
+  @include transform(translateY(-70px));
+  @include transition-property(transform, background);
+  @include transition-duration(800ms);
+  @include transition-timing-function(cubic-bezier(0.165, 0.84, 0.44, 1));
+  @include media(tablet) { 
+    display: block;
+    bottom: -70px ;
+    top: auto;
+    height: 120px;
+    background-color: $white;
+  }  
+  @include media(desktop-s) {
+    height: 100px;
+  } 
+  @include media(desktop-l) { 
+    padding-left: 20px;  
+    height: 120px;
+  }
+}
+
+.header-sticky--dark {
+  background-color: #000000;
+  border-top: 2px solid $orange;
+}
+
+.header-sticky.smaller { 
+  z-index: $zIndex-3;
+  background-image: url("../img/global/bg-sticky-header.jpg");
+  background-repeat: repeat-x;
+  height: 60px;
+  position: fixed;
+  top:0;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: $black;
+  @include transform(translateY(0));
+  .header-sticky-logo-laureate,
+  .header-sticky-button-explore,
+  .header-sticky-login-container,
+  .header-sticky-button-help 
+  {
+    display: block;
+  }
+  @include media(desktop-m) {
+  .header-sticky-branding {
+    display: block;
+  }
+  }
+}
+
+
+/* Sticky Header - Laureate Logo 
+**********************/
+
+.header-sticky-logo-laureate {
+  display: none;
+  width: 20%;
+  float: left;
+  background-image: url("../img/global/separator-sticky-header.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 60px;
+  padding-top: 5px;
+  @include media(tablet) { 
+    width: 10%;
+  }
+  @include media(desktop-s) { 
+    width: 70px;
+  }
+}
+
+.header-sticky-logo-laureate > .icon-leaf {
+  color: $orange;
+  @include transition-property(all);
+  @include transition-duration(.3s);  
+}
+
+.header-sticky-logo-laureate:hover > .icon-leaf {
+  color: $white;
+}
+
+
+/* Sticky Header - Explore the Portal 
+**********************/
+
+.header-sticky-button-explore {
+  display: none;
+  width: 20%;
+  height: 60px;
+  float: left;
+  padding-top: 8px;
+  padding-left: 12px;
+  background-image: url("../img/global/separator-sticky-header.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  @include transition-property(background, transform);
+  @include transform(translateX(0));
+  @include transition-duration(.4s);
+  @include media(tablet) { 
+    width: 35%;
+  }
+  @include media(desktop-s) { 
+    width: 280px;
+    padding-left: 35px;
+  }
+}
+.header-sticky-button-explore:hover {
+  background-color: transparent;
+}
+
+.header-sticky-button-explore > .icon-explore {
+  margin: 15px auto 0 auto;
+}
+
+.header-sticky-button-explore > span {
+  display: none;
+  @include media(tablet) { 
+    display: block;
+    float: left;
+    margin-top: 7px;
+    text-transform: uppercase;
+    font-family: $ProximaNova;
+    color: $white;
+    font-weight: $regular;
+    @include adjust-font-size-to(14px);
+  }
+}
+
+
+.header-sticky-button-explore:hover > span {
+  color: lighten($orange, 25%);
+}
+
+
+/* Sticky Header - Branding Title
+**********************/
+
+.header-sticky-branding {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  padding-top: 8px; 
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.header-sticky-branding > h2 {
+  color: #CCCCCC;
+  width: 40%;
+  margin: 0 auto;
+  @include adjust-font-size-to(12px);
+}
+
+.header-sticky-branding > h3 {
+  color: $white;
+  width: 40%;
+  margin: 0 auto;
+  @include adjust-font-size-to(30px, 1.5);
+}
+
+
+/* Sticky Header - Help Button 
+**********************/
+
+.header-sticky-button-help {
+  display: none;
+  width: 20%;
+  height: 60px;
+  float: right;
+  padding-left: 18px;
+  padding-top: 8px;
+  background-image: url("../img/global/separator-sticky-header.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  @include media(tablet) { 
+    width: 10%;
+  }
+  @include media(desktop-s) { 
+    width: 150px;
+    padding-left: 15px;
+  }
+}
+
+.header-sticky-button-help > .icon-help-bold {
+  color: $white;
+  font-size: 2rem;
+  margin-top: 6px;
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include media(desktop-s) { 
+    float: left;
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+}
+
+.header-sticky-button-help  > span {
+  display: none;
+  @include media(desktop-s) {
+    display: block;
+    float: left;
+    width: 80px;
+    height: 60px;
+    padding-top: 8px;
+    text-transform: uppercase;
+    color: $white;
+    font-family: $ProximaNova;
+    font-weight: $regular;
+    @include adjust-font-size-to(14px);
+  }
+}
+
+.header-sticky-button-help:hover {
+  .icon-help-bold {
+    color: $orange;
+  }
+  > span {
+    color: lighten($orange, 25%);
+  }
+}
+
+
+/* Sticky Header - Login 
+**********************/
+
+.header-sticky-login-container {
+  display: none;
+  width: 20%;
+  height: 60px;
+  float: right;
+  padding-left: 25px;
+  background-image: url("../img/global/separator-sticky-header.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  @include media(tablet) { 
+    width: 10%;
+  }
+  @include media(desktop-s) { 
+    width: 210px;
+    padding-left: 30px;
+  }
+}
+
+.header-sticky-login-container > img {
+  width:40px;
+  height:40px;
+  margin-top: 8px; 
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include border-radius(50em);
+  @include media(desktop-s) { 
+    float: left;
+  }   
+}
+
+.header-sticky-login-name {
+  display: none;
+  @include media(desktop-s) {
+    display: table-cell;
+    text-transform: uppercase;
+    vertical-align: middle;
+    height: 60px;
+    max-width: 150px;
+    padding-left: 10px;
+    font-weight: $regular;
+    color: $white;
+    font-family: $ProximaNova;
+    @include adjust-font-size-to(14px, 1);
+  }  
+}
+
+.header-sticky-login-container:hover {
+  img {
+    border: 1px solid $orange;
+  }
+  span {
+    color: lighten($orange, 25%);
+  }
+}
+
+/* Discover  
+**********************/
+
+.header--discover {
+  .header-logo-laureate > .icon-leaf {
+    color: $orange;
+  }
+  .header-logo-laureate:hover > .icon-leaf {
+    color: $white;
+  }  
+}
+
+
+/* Signature Products 
+**********************/
+
+.header--signature {
+  @include explore-the-portal-button ($white, #8C4417);
+  @include help-button ($white, #8C4417);
+  .header-logo-laureate:hover > .icon-leaf {
+    color: lighten($orange, 25%);
+  }
+}
+
+.header-sticky--signature {
+  background-color: transparent;
+  height: 0;
+}
+
+/* Business Suite
+**********************/
+
+.header--business-suite {
+  @include explore-the-portal-button ($white, $dark-purple);
+  @include help-button ($white, $dark-purple);
+  .header-logo-laureate:hover > .icon-leaf {
+    color: lighten($dark-purple, 40%);
+  }
+}
+
+/* Communications Programs
+**********************/
+
+.header--communications {
+  @include explore-the-portal-button ($white, $mid-purple);
+  @include help-button ($white, $mid-purple);
+  .header-logo-laureate:hover > .icon-leaf {
+    color: lighten($mid-purple, 25%);
+  }
+}
+
+/* Math Programs
+**********************/
+
+.header--math {
+  @include explore-the-portal-button ($white, $baby-blue);
+  @include help-button ($white, $baby-blue);
+  .header-logo-laureate:hover > .icon-leaf {
+    color: lighten($baby-blue, 25%);
+  }
+}
+
+
+/* International Class 
+**********************/
+
+.header--international-class {
+  @include explore-the-portal-button ($white, $green-aqua);
+  @include help-button ($white, $green-aqua);
+  .header-logo-laureate:hover > .icon-leaf {
+    color: lighten($green-aqua, 25%);
+  }
+}
+
+
+/* Entrepreneurship 
+**********************/
+
+.header--entrepreneurship {
+  @include explore-the-portal-button ($white, $purple-brown);
+  @include help-button ($white, $purple-brown);
+  .header-logo-laureate:hover > .icon-leaf {
+    color: lighten($purple-brown, 25%);
+  }
+}
+
+
+/* Header with Breadcrumb - Catalogs, Resources & Testimonials 
+**********************/
+
+.header-breadcrumb {
+  width: 90%;
+  max-width: 1800px;
+  margin: 100px 5% 0 5%;
+  padding: 20px;
+  @include clearfix;
+  @include media(desktop-s) { 
+    padding: 40px;    
+  }
+  @include media(desktop-xl) { 
+    margin: 100px auto 0 auto;    
+  }
+}
+
+.header-breadcrumb--has-white-bg {
+  background-color: $white;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.button-back {
+  width: 100%;
+  float: right; 
+  margin-bottom: 20px;
+  font-family: $ProximaNova;
+  font-weight: $bold;
+  text-transform: uppercase; 
+  @include clearfix;
+  i {
+    color: $orange;
+    @include media(mobile-only) { 
+      @include adjust-font-size-to(25px);    
+    }
+  }
+  span {
+    display: inline;
+  }
+  @include media(desktop-s) { 
+    width: auto;
+    margin: 0;    
+  }
+}
+
+.header-breadcrumb--testimonial .current {      
+  color: $green-testimonial;
+}
+
+.header-breadcrumb--resource .current {    
+  color: $yellow-resource;
+}
+
+.header-breadcrumb--catalog .current {    
+  color: $orange;
+}
+
+.header-breadcrumb h2 {
+  margin: 30px 0;
+  float: left;
+  width: 100%;
+  color: $mid-gray;
+  text-transform: uppercase;
+  @include media(mobile-only) { 
+    @include adjust-font-size-to(25px); 
+  }
+}
+
+.header-breadcrumb h2 > a {
+  float: left;
+  @include adjust-font-size-to(25px, 1);
+  i {
+    color: $mid-gray;
+  }
+  @include media(mobile-only) { 
+    @include adjust-font-size-to(18px); 
+  }
+}
+
+.header-breadcrumb--has-white-bg h2 {
+  @include media(desktop-s) { 
+    width: 72%;  
+  } 
+}
+
+.header-breadcrumb--resource h2::before {
+  @include borderline($yellow-resource, left);
+}
+
+.header-breadcrumb--testimonial h2::before {
+  @include borderline($green-testimonial, left);
+}
+
+.header-breadcrumb--catalog h2::before {
+  @include borderline($red, left);
+}
+
+.header-breadcrumb--catalog {
+  padding-bottom: 0px;    
+  background-color: $light-brown; 
+}
+
+.header-breadcrumb--catalog > h2 {
+  text-transform: capitalize;    
+  @include adjust-font-size-to(35px);
+}
+
+/* Header Breadcrumb Signatures
+**********************/
+
+.header-breadcrumb-catalog--lmba > h2 {
+  color: $dark-purple;
+}
+
+.header-breadcrumb-catalog--minors > h2 {
+  color: $baby-blue;
+}
+
+.header-breadcrumb-catalog--ic > h2 {
+  color: $green-aqua;
+}
+
+.header-breadcrumb-catalog--math > h2 {
+  color: $highlight-blue;
+}
+
+.header-breadcrumb-catalog--entrepreneurship > h2 {
+  color: #6C6C6E;
+}
+
+.header-breadcrumb-catalog--communications > h2 {
+  color: #737499;
+}
+
+/* Header Overlay - For Preview of Videos or Galleries
+**********************/
+
+.header-modal {
+  height: 100px;
+  top: -100px;
+  padding-top: 20px;
+  position: fixed;
+  overflow: hidden;
+  z-index: $zIndex-4;
+  background: url("../img/global/bg-menu-explore-small.jpg") repeat;
+  @include opacity(0);
+  @include transition-property(all);
+  @include transition-duration(.4s);
+  @include transition-delay(.5s);
+}
+
+.modal--is-open .header-modal {
+  top: 0;
+  @include opacity(1);
+}
+
+.header-modal i.icon-leaf{
+  margin: 0 40px;
+  float: left; 
+  color: $orange; 
+}
+
+.header-modal-branding{
+  float: left; 
+}
+
+.header-modal-branding >h2{ 
+  color: $white;
+  margin: 0 auto;
+  text-transform: uppercase;
+  @include adjust-font-size-to(18px, 1.5);
+  @include media(mobile-only) {
+    display: none;
+  }
+}
+
+.button-close-modal {
+  height: 48px;
+  width: auto;
+  right: 40px;
+  position: absolute;
+  color: $white;
+  text-transform: uppercase;
+  @include transition-property(all);
+  @include transition-duration(.5s);
+  i {
+    color: $orange;
+    margin-right: 5px;
+  }
+  &:hover {
+    color: $orange;
+  }
+}

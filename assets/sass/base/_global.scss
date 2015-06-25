@@ -1,0 +1,48 @@
+
+* { 
+  @include box-sizing(border-box);
+}
+
+body { 
+  background-color: #F2F2F2;  
+  font-family: $Aktiv;
+  @include establish-baseline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  vertical-align: top;
+  margin: 0;
+  padding: 0; 
+  font-family: $ProximaNova;
+}
+
+h2 {
+  font-weight: $extrabold;
+  @include adjust-font-size-to(40px);
+}
+
+h3 {
+  font-weight: $extrabold;
+  @include adjust-font-size-to(30px, 2.5);
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

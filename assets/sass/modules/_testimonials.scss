@@ -1,0 +1,79 @@
+/* Global Styles for Products Homepages
+**********************/
+
+.testimonial-intro {
+  background-color: #F1EFEE;
+}
+.testimonial-intro .columns-12 {
+	padding-top: 0;
+}
+
+.testimonial-intro header{
+  padding-bottom: 0;
+}
+
+.testimonial-intro h2 {
+  color: $mid-gray;
+  min-height: 100px; 
+  background-repeat: no-repeat;
+  background-image: url(../img/signature/bg-testimonials-1.svg);
+  background-position: top left;
+}
+
+.testimonial-intro h2::before {
+  @include borderline($green-testimonial, center);
+}
+
+.testimonial-description {
+  width: 100%;
+}
+
+.testimonial-description > p {
+  margin-top: 0;
+  font-style: italic;
+	text-align: center;
+  color: $mid-gray;
+  @include adjust-font-size-to(20px);
+	@include media(desktop-l) {
+		margin: 20px auto;
+		width: 80%;
+		@include adjust-font-size-to(25px);
+	}
+}
+
+.testimonial-details {
+  background-repeat: no-repeat;
+  background-image: url("../img/signature/bg-testimonials-2.svg");
+  background-position: top right;
+  width: 100%;
+  text-align:center;
+}
+
+.testimonial-details i {
+  display:block;
+  text-align:center;
+  font-size: 4rem;  
+  color: $green-testimonial;
+	@include media(desktop-l) {
+		display: inline;
+	}
+}
+
+.testimonial-details span {
+  display: block;
+  margin: 15px 0 30px 0;
+  font-style: italic;
+	font-weight: $bold;
+  color: $gray;
+  @include adjust-font-size-to(18px);
+	@include media(desktop-l) {
+		display: inline;
+	}
+}
+
+.testimonial--math .testimonial-details {
+  @include media(desktop-m) {
+    height:120px;
+  }
+}
+    

@@ -1,0 +1,234 @@
+
+/* Global
+**********************/
+
+.button-default {
+  @include button($orange);
+}
+
+
+/* Discover Portal
+**********************/
+
+.feature--ebooks .button { 
+  margin: 0 auto;
+  @include button (#FFBC5E);
+}
+
+#harvard.feature--withbenefits .button {
+  margin: 0 auto;
+  @include button ($red);
+}
+
+.feature--multimedia .button {
+  margin: 0 auto;
+  @include button ($purple);
+}
+
+#repositories .button {
+  margin: 0 auto;
+  @include button (#AE3006);
+}
+
+
+/* Signature
+**********************/
+
+.intro--signature .intro-navigation .button {
+  @include button (#FC9351);
+	width: 130px;
+	margin: 0 auto;
+	padding-top: 5px;
+  font-weight: $regular;
+  @include adjust-font-size-to (12px, 1);
+	@include media(desktop-m) {
+		width: 160px;
+		padding-top: 12px;
+	}
+	@include media(desktop-l) {
+    width: 200px;
+    height: 45px;
+		padding-top: 15px;
+		font-weight: $semibold;
+    @include adjust-font-size-to (14px, 1);
+  }
+}
+
+.button-go-to-catalog {
+  margin: 30px auto 0 auto;
+  @include button($orange);
+}
+
+.button-go-to-resource {
+  margin: 0 auto;
+  @include button($yellow-resource);
+  width: 200px;
+}
+
+.button-go-to-testimonial {
+  margin: 0 auto;
+  @include button($green-testimonial);
+  width: 220px;
+	@include media(desktop-l) {
+		margin-top: 20px;
+	}
+}
+
+
+/* SP Catalog Buttons 
+**********************/
+
+
+.catalog--lmba .button--withicon {
+  @include button-icon ($light-brown);
+  @include button (#554859);    
+}
+
+.catalog--minors .button--withicon {
+  @include button ($baby-blue); 
+  @include button-icon ($light-brown);
+}
+
+.catalog--minors .catalog-container .button {
+  @include button ($light-brown); 
+  color: $baby-blue;
+    &:hover {
+        color: $baby-blue;
+    }
+}
+
+.catalog--math .button--withicon {
+  @include button-icon ($light-brown);
+  @include button ($highlight-blue);    
+}
+
+.catalog--entrepreneurship .button--withicon {
+  @include button (#848586);  
+  @include button-icon ($light-brown);
+}
+
+.catalog--communications .button {
+  @include button (#8C84B8);  
+}
+
+.catalog--communications .block-container .button {
+  opacity: 100;
+  float: left;
+   margin-bottom: 10px;    
+  @include button ($light-brown);  
+  color: $dark-purple; 
+  &:hover {
+    background-color: transparent;}
+  @include media(desktop-m) {
+     float: right;
+  }       
+}
+
+.catalog--communications .button--withicon {
+  @include button (#8C84B8);  
+  @include button-icon ($light-brown);
+}
+
+.button-go-to-class {
+  @include button ($orange);  
+  padding-top: 5px;
+}
+
+.nav-explore-the-portal li > .button-go-to-class {
+  width: 240px;
+  text-align: center;
+  margin-top: 10px;
+  background-image: none;
+  font-weight: $bold;
+  color: $white;
+  padding-right: 15px;
+  &:hover { 
+    background-color: $orange;
+    color: $white;
+  }
+}
+
+.nav-sticky.nav--international-class > li .button-go-to-class {
+  height: 50px;
+  width: 170px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 15px;
+	padding-top: 8px;
+  @include adjust-font-size-to(13px);
+  @include media(desktop-l) {
+    width: 180px;
+  }
+}
+
+
+/* Resources and Testimonials 
+**********************/
+
+
+.block .button {
+  margin: 0 auto;
+  position: relative; 
+  @include button ($orange);
+  @include transition-property(all);
+  @include transition-duration(.4s);
+  @include transition-delay(.1s);
+}
+
+.block:hover .block-preview .button {
+  @include transition-property(all);
+  @include transition-duration(.4s);
+  @include transition-delay(.1s);
+}
+
+.block--resource .block .button {
+  @include button ($yellow-resource);
+}
+
+.block--testimonial .block .button {
+  @include button ($green-testimonial);
+}
+
+.block--resource .block-folder .button {
+  color: $yellow-resource;
+  @include button ($white);
+}
+
+.block--resource .block-folder:hover .button {
+  color: $yellow-resource;
+}
+
+.testimonial--math .button-go-to-testimonial {
+    display:none;
+}
+
+/* 404 Error
+**********************/
+
+.notice--not-found .button--notice-back {
+    @include button ($olive);
+}
+
+.notice--not-found .button--notice-support {
+    @include button ($violet);
+}
+
+.notice .button {
+    width: 340px;
+    margin: 26px auto;
+    font-weight:$regular;
+    @include button-icon ($white);
+}
+
+
+/* LIUX Framework  - Sticky Header Menu
+**********************/
+
+.download-raichux .button {
+  @include button ($orange);
+  width: auto;
+  height: 60px;
+  padding: 8px 20px;
+  margin-left: 20px;
+}
+
