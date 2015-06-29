@@ -1,7 +1,7 @@
 ;(function(namespace, undefined) {
     'use strict';
 
-    namespace.BackOffice = angular.module('BackOffice', ['angular.css.injector', 'smoothScroll', 'Main', 'Shared', 'angulartics', 'angulartics.google.analytics']);
+    namespace.BackOffice = angular.module('BackOffice', ['angular.css.injector', 'smoothScroll', 'Main', 'Shared', 'Login','angulartics', 'angulartics.google.analytics']);
     namespace.Controllers = {};
     namespace.Services = {};
     namespace.Directives = {};
@@ -52,7 +52,7 @@
         });
 
         $urlRouterProvider.otherwise('/error');
-        $urlRouterProvider.when('', '/main/index');
+        $urlRouterProvider.when('', '/login/signin');
     });
 
     BackOffice.config(['$provide', function($provide){
@@ -80,12 +80,9 @@
         };
     });
 
-    BackOffice.value('GlobalUser', {
-        logged: false,
+    BackOffice.value('GlobalUser', {        
         name: "",
-        email: "",
-        numericalId: "",
-        university: ""
+        email: ""
     });
 
     var config;
@@ -94,24 +91,17 @@
         if (location.host === "global2.laureate.net" || location.host==="www.global2.laureate.net") {
             //prod
             config = {
-                apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api',
-                //apiURL: 'https://master-dot-api-dot-liugateway.appspot.com/_ah/api',
-                mandrillKey: 'Yr4uE3q0pAV6J8lqFlCigQ'
+                apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api'                
             };
         } else if (location.host === "qa-liugateway.appspot.com" || location.host==="www.qa-liugateway.appspot.com") {
             //ssi
             config = {
-                 apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api',
-                 //apiURL: 'https://master-dot-api-dot-liugateway.appspot.com/_ah/api',
-                 mandrillKey: 'jOPSbaFk5N9Z8FfHTApgjQ'
+                 apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api'                 
              };
         } else {
             //dev
-            config = {
-                 //apiURL: 'http://localhost:8080/_ah/api',
-                 apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api',
-                 //apiURL: 'https://master-dot-api-dot-liugateway.appspot.com/_ah/api',
-                 mandrillKey: 'jOPSbaFk5N9Z8FfHTApgjQ'
+            config = {                 
+                apiURL: 'http://yaxstudio.host56.com/ccp'                 
             };
         }
 

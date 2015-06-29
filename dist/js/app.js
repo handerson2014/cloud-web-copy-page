@@ -1,7 +1,7 @@
 ;(function(namespace, undefined) {
     'use strict';
 
-    namespace.BackOffice = angular.module('BackOffice', ['angular.css.injector', 'smoothScroll', 'Main', 'Shared', 'angulartics', 'angulartics.google.analytics']);
+    namespace.BackOffice = angular.module('BackOffice', ['angular.css.injector', 'smoothScroll', 'Main', 'Shared', 'Login','angulartics', 'angulartics.google.analytics']);
     namespace.Controllers = {};
     namespace.Services = {};
     namespace.Directives = {};
@@ -52,7 +52,7 @@
         });
 
         $urlRouterProvider.otherwise('/error');
-        $urlRouterProvider.when('', '/main/index');
+        $urlRouterProvider.when('', '/login/signin');
     });
 
     BackOffice.config(['$provide', function($provide){
@@ -80,12 +80,9 @@
         };
     });
 
-    BackOffice.value('GlobalUser', {
-        logged: false,
+    BackOffice.value('GlobalUser', {        
         name: "",
-        email: "",
-        numericalId: "",
-        university: ""
+        email: ""
     });
 
     var config;
@@ -94,24 +91,17 @@
         if (location.host === "global2.laureate.net" || location.host==="www.global2.laureate.net") {
             //prod
             config = {
-                apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api',
-                //apiURL: 'https://master-dot-api-dot-liugateway.appspot.com/_ah/api',
-                mandrillKey: 'Yr4uE3q0pAV6J8lqFlCigQ'
+                apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api'                
             };
         } else if (location.host === "qa-liugateway.appspot.com" || location.host==="www.qa-liugateway.appspot.com") {
             //ssi
             config = {
-                 apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api',
-                 //apiURL: 'https://master-dot-api-dot-liugateway.appspot.com/_ah/api',
-                 mandrillKey: 'jOPSbaFk5N9Z8FfHTApgjQ'
+                 apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api'                 
              };
         } else {
             //dev
-            config = {
-                 //apiURL: 'http://localhost:8080/_ah/api',
-                 apiURL: 'https://qa-dot-api-dot-qa-liugateway.appspot.com/_ah/api',
-                 //apiURL: 'https://master-dot-api-dot-liugateway.appspot.com/_ah/api',
-                 mandrillKey: 'jOPSbaFk5N9Z8FfHTApgjQ'
+            config = {                 
+                apiURL: 'http://yaxstudio.host56.com/ccp'                 
             };
         }
 
@@ -156,21 +146,84 @@
     'use strict';
 
 
+    var Login = angular.module('Login', ['ui.router']);
+
+    Login.config(function($stateProvider) {
+
+        $stateProvider.state('login', {
+            url: '/login',
+            views: {
+                'header': {
+                    templateUrl: 'app/common/views/header.html'
+                },
+                'container':{
+                    templateUrl: 'app/login/views/container-main.html'
+                },
+                'footer':{
+                    templateUrl: 'app/common/views/footer.html'
+                }
+            }
+        });
+
+        $stateProvider.state('login.signin', {
+            url: '/signin',
+            views: {                
+                'container-inside':{
+                    templateUrl: 'app/login/views/signin.html',
+                    controller: 'SignInCtrl'
+                },
+                'footer':{
+                    templateUrl: 'app/common/views/footer.html'
+                }
+            }
+        });
+
+        $stateProvider.state('login.register', {
+            url: '/register',
+            views: {                
+                'container-inside':{
+                    templateUrl: 'app/login/views/register.html',
+                    controller: 'RegisterCtrl'
+                },
+                'footer':{
+                    templateUrl: 'app/common/views/footer.html'
+                }
+            }
+        });
+    });
+
+}(this));
+;(function(namespace, undefined) {
+    'use strict';
+
+
     var Main = angular.module('Main', ['ui.router']);
 
     Main.config(function($stateProvider) {
 
         $stateProvider.state('main', {
-            url: '/main/index',
+            url: '/main',
             views: {
                 'header': {
-                    templateUrl: 'app/main/views/header.html'
+                    templateUrl: 'app/common/views/header.html'
                 },
                 'container':{
                     templateUrl: 'app/main/views/container-main.html'
                 },
                 'footer':{
-                    templateUrl: 'app/main/views/footer.html'
+                    templateUrl: 'app/common/views/footer.html'
+                }
+            }
+        });        
+
+        $stateProvider.state('main.index', {
+            url: '/index',
+            views: {                
+                'container-inside':{
+                    templateUrl: 'app/main/views/textboxes.html'
+                },
+                'footer':{
+                    templateUrl: 'app/common/views/footer.html'
                 }
             }
         });
@@ -1095,5 +1148,84 @@ BackOffice.filter('TrimQuote', function() {
 	}
   ];
   angular.module('Shared').service('__Notifications', NotificationsFactory);
+
+}(this));
+
+(function(namespace, undefined) {
+	'use strict';
+
+	var RegisterController = ['$scope', '$http', '$stateParams',  'cssInjector','$location',
+		function($scope, $http, $stateParams, cssInjector, $location) {
+			$scope.register = function(){
+				alert();
+			};			
+		}
+	];
+	angular.module('Login').controller('RegisterCtrl', RegisterController);
+
+})(this);
+
+(function(namespace, undefined) {
+	'use strict';
+
+	var SignInController = ['$scope', '$http', '$stateParams',  'cssInjector','$location', 'GlobalUser', '__Login',
+		function($scope, $http, $stateParams, cssInjector, $location, GlobalUser, __Login) {
+			
+			$scope.user = {
+				email: "dddd",
+				password: ""
+			};
+
+			$scope.signin = function(){
+				 __Login.getGlobalLoggedUser({
+					'Username': 'handerson.contreras@gmail.com',
+					'Password': '123456'});
+			};			
+		}
+	];
+	angular.module('Login').controller('SignInCtrl', SignInController);
+
+})(this);
+;(function(namespace, undefined) {
+    'use strict';
+
+    var GlobalPortalServices = ['$http', 'GlobalUser', 'GlobalSettings','$rootScope', '$location','$timeout',
+
+        function($http, GlobalUser, GlobalSettings, $rootScope, $location,$timeout) {
+            var GPservices = {
+                getGlobalLoggedUser: function(params) {                    
+                    var loggedUser = $http({
+                        'method': 'POST',
+                        'async': true,                        
+                        'url': GlobalSettings.apiURL + '/CCPLoginWS.php'
+                    });
+
+                    return loggedUser;
+                },
+                setLoginData: function(params) {
+                    var self = this;
+                    var userinfo = self.getGlobalLoggedUser();
+
+                    userinfo.then(function(response) {
+                        console.log(response);
+                        if (response.data.email === "") {
+                            GlobalUser.logged = false;
+                        } else {
+                            GlobalUser.logged = true;
+                        }
+                        
+                        GlobalUser.email = response.data.email;                                               
+
+                        $timeout(function() {
+                            $rootScope.$emit('Global.UserLogin', response.data.email);
+                        });
+
+                    });
+                }
+            };
+            return GPservices;
+        }
+    ];
+    angular.module('Login').service('__Login', GlobalPortalServices);
 
 }(this));
